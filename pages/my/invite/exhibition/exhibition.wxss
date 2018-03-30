@@ -1,0 +1,76 @@
+@import '/pages/exhibition/detail/detail.wxss';
+
+.info-label{
+    margin-left: 10rpx;
+}
+.info-foot{
+    flex-flow: column;
+}
+.invite-addr{
+    color: #57ac79;
+    font-size: 30rpx;
+}
+.invite-date{
+    font-size: 28rpx;
+    color: #333;
+    
+}
+.log-msg0 {
+  color: #fff;
+  margin-top: 16rpx;
+  margin-right: 42rpx;
+  padding: 20rpx;
+  line-height: 56rpx;
+  border-radius: 5rpx;
+  background: #6190ec;
+  width: auto;
+  /*display: inline;*/
+  display: inline-block;
+  font-size: 28rpx;
+  background-color: #B16AC9; 
+}
+.log-msg1 {
+  color: #fff;
+  margin-top: 16rpx;
+  margin-right: 42rpx;
+  padding: 20rpx;
+  line-height: 56rpx;
+  border-radius: 5rpx;
+  background: #6190ec;
+  width: auto;
+  /*display: inline;*/
+  display: inline-block;
+  font-size: 28rpx;
+  background-color: #46DBC4; 
+}
+.log-msg2 {
+  color: #fff;
+  margin-top: 16rpx;
+  margin-right: 42rpx;
+  padding: 20rpx;
+  line-height: 56rpx;
+  border-radius: 5rpx;
+  background: #6190ec;
+  width: auto;
+  /*display: inline;*/
+  display: inline-block;
+  font-size: 28rpx;
+  background-color: #EFA84E;
+}
+.log-msg3 {
+  color: #fff;
+  margin-top: 16rpx;
+  margin-right: 42rpx;
+  padding: 20rpx;
+  line-height: 56rpx;
+  border-radius: 5rpx;
+  background: #6190ec;
+  width: auto;
+  /*display: inline;*/
+  display: inline-block;
+  font-size: 28rpx;
+}
+
+.log-purple {
+   background-color: #a66cb9;
+}

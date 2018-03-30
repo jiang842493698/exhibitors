@@ -1,0 +1,12 @@
+<view class="page">
+    <view class="page-body">
+        <view class="error">
+            <image src="/assets/images/other/astronaut.png"></image>
+            <view class="title">sorry</view>
+            <view class="content">
+                <view>请求失败</view>
+                <view>您似乎已断开了与互联网的链接</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,104 @@
+<view class='page'>
+    <view class='page-head'>
+        <navigator url="/pages/my/detail/detail" class='me-panle' style=''>
+            <view class='me-info'>
+                <view class='me-info-top'>
+                    <view class='info-top-left'>
+                        <view class="info-username">
+                            <text>{{result.Name}}</text>
+                            <text>{{result.Job}}</text>
+                        </view>
+                        <view class='info-name'>
+                            <text>{{Exhibitior.City}}</text>
+                            <text>{{Exhibitior.CompanyName}}</text>
+                        </view>
+                        <view class='info-type'>
+                            <label>{{Exhibitior.Categories}}</label>
+                        </view>
+                    </view>
+                    <view class='info-top-right'>
+                        <view class='info-logo'>
+                            <image src='{{images}}'></image>
+                        </view>
+                    </view>
+                </view>
+                <view class='me-info-bottom'>
+                    <view class='info-bottom-left'>
+                        <label>简介：</label>
+                    </view>
+                    <view class='info-bottom-right'>
+                        <label>{{Exhibitior.Industry}}</label>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <view class='page-body'>
+        <view class='cell'>
+            <view class='cell-group'>
+                <navigator hover-class="nav-hover" bindtap='onhome' class='cell-item'> 
+                    <view class='cell-item-h'>
+                        <i class="iconfont icon-msg"></i>
+                    </view>
+                    <view class='cell-item-b'>我的消息</view>
+                    
+                    <view class='cell-item-f'>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </view>
+                </navigator>
+            </view>
+            <!-- <view class='cell-group'>
+                <navigator hover-class="nav-hover" url="" class='cell-item'> 
+                    <view class='cell-item-h'>
+                        <i class="iconfont icon-msg"></i>
+                    </view>
+                    <view class='cell-item-b'>个人资料</view>
+                    
+                    <view class='cell-item-f'>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </view>
+                </navigator>
+            </view> -->
+            <view class='cell-group'>
+                <navigator hover-class="nav-hover" url="/pages/my/invite/invite" class='cell-item'>
+                    <view class='cell-item-h'>
+                        <i class="iconfont icon-yuyue"></i>
+                    </view>
+                    <view class='cell-item-b'>我的约请</view>
+                    <view class='cell-item-f'>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </view>
+                </navigator>
+                <navigator hover-class="nav-hover" url="/pages/my/cards/index" class='cell-item'>
+                    <view class='cell-item-h'>
+                        <i class="iconfont icon-mingpianjia-xuanzhong"></i>
+                    </view>
+                    <view class='cell-item-b'>名片夹</view>
+                    <view class='cell-item-f'>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </view>
+                </navigator>
+                <!-- <navigator hover-class="nav-hover" url="/pages/my/collection/collection" class='cell-item'>
+                    <view class='cell-item-h'>
+                        <i class="iconfont icon-collect_s"></i>
+                    </view>
+                    <view class='cell-item-b'>我的收藏</view>
+                    <view class='cell-item-f'>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </view>
+                </navigator> -->
+            </view>
+            <view class='cell-group'>
+                <navigator hover-class="nav-hover" url="/pages/my/settings/settings" class='cell-item'>
+                    <view class='cell-item-h'>
+                        <i class="iconfont icon-shezhi1"></i>
+                    </view>
+                    <view class='cell-item-b'>设置中心</view>
+                    <view class='cell-item-f'>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

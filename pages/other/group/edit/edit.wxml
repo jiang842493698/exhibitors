@@ -1,0 +1,36 @@
+<view class="page">
+        <form bindsubmit="onSubmit">
+            <view class="page-body">
+                <view class="cell">
+                    <view class="cell-list">
+                        <view class="cell-item">
+                            <view class="cell-header">标签名</view>
+                            <view class="cell-body">
+                                <input type="text" placeholder="请输入标签名称" name="name" value="{{Info.Name}}"/>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="panle">
+                    <view class="panle-title">您可能会用到的标签</view>
+                    <view class="panle-body">
+                        <view class="panle-list">
+                            
+                            <view bindtap="onChoose">VIP</view>
+                            <view>客户</view>
+                            <view>供应商</view>
+                            <view>合作伙伴</view>
+                            <view>同行</view>
+                           
+                            <block wx:for="{{tjList}}">
+                                 <view bindtap="onChoose" data-name="{{item.Name}}">{{item.Name}}</view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="page-footer">
+                <button formType="submit" class="btn btn-primary">保存</button>
+            </view>
+            </form>
+        </view>

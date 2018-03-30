@@ -1,0 +1,217 @@
+<view class='page'>
+    <view class='page-body agreed'>
+        <!-- <view class='page-body'> -->
+        <!--\>>名片 -->
+        <view class='business_crad'>
+            <view class='business_crad-img_not'>
+                <view>名片信息</view>
+                <view>约请同意后可显示具体名片</view>
+            </view>
+            <!-- <view class='business_crad-collection'>
+              <i class="iconfont icon-sms-r"></i>
+              <label>收藏</label>
+            </view> -->
+            <swiper class='cord-image' indicator-dots>
+                <swiper-item>
+                    <image src='{{visitors.Image}}' mode='aspectFill'></image>
+                </swiper-item>
+                <swiper-item>
+                    <image src='{{link.BackImage}}' mode='aspectFill'></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <!--<<\名片 -->
+        <!--\\>>姓名  -->
+        <view class='info-crad'>
+            <view class='info-crad-head'>
+                <view class='h-left'>
+                    <view class='h-name'>
+                        <label>{{visitors.Name}}</label>
+                        <label>{{visitors.Job}}</label>
+                    </view>
+                    <view class='h-company'>
+                        <label>{{visitors.CompanyName}}</label>
+                    </view>
+                </view>
+                <view class='h-right'>
+                    <view class="collect-wrap">
+                        <i class="iconfont icon-collect collect" bindtap=""></i>
+                        <i class="iconfont icon-collect collect"></i>
+                        <i class="iconfont icon-collect collect"></i>
+                        <i class="iconfont icon-collect collect"></i>
+                        <i class="iconfont icon-collect"></i>
+                    </view>
+                    <!-- <navigator url="/pages/customer/details/edit/edit?id={{link.RecordId}}" hover-class="none" >编辑</navigator> -->
+                    <view class="b-right">{{visitors.CompAddr}}</view>
+                </view>
+            </view>
+            <view class='info-crad-body'>
+                <view class='b-left'>
+                    <label>{{visitors.Categories}}</label>
+                </view>
+                <!-- <view class='b-right'>
+                    <label>上海</label>
+                </view> -->
+            </view>
+            <view class='info-crad-foot'>
+                <view class='f-left'>
+                    <view class='icon-round {{visitors.isSign==0?"":active}}'>
+                        <view>
+                            <i class="iconfont icon-wenjuan"></i>
+                        </view>
+                    </view>
+                    <view class='icon-round active badge'>
+                        <view>
+                            <i class="iconfont icon-yuyue1"></i>
+                        </view>
+                        <view class="badge-count" wx:if="{{visitors.InvitationNumber>0}}">
+                            <text>{{visitors.InvitationNumber}}</text>
+                        </view>
+                    </view>
+                    <view class='icon-round {{visitors.isSign==0?"":active}}'>
+                        <view>
+                            <i class="iconfont icon-daoda"></i>
+                        </view>
+                    </view>
+
+                </view>
+                <view class='f-right'>
+                    <!-- <view class='f-btn'>
+                  约TA
+                </view>
+                <view class='f-state'>已同意</view> -->
+                    <view class="invite-addr">会面地点：{{visitors.MeetingPlace}}</view>
+                    <view class="invite-date">预约时间：{{visitors.dateTime}}</view>
+                </view>
+            </view>
+        </view>
+        <!--<<\姓名  -->
+        <!--\>>信息  -->
+        <view class='link-crad'>
+            <view class='link-crad-list'>
+                <view class='link-crad-item'>
+                    <view class='l-item-h' bindtap="onCall">
+                        <i class='iconfont icon-dianhua'></i>
+                    </view>
+                    <view class='l-item-b-list'>
+                        <view class='l-item-b' bindtap="onCall" data-tel="{{visitors.Mob}}">
+                            <view class='l-b-top'>{{visitors.Mob}}</view>
+                            <view class='l-b-bottom'>手机</view>
+                        </view>
+                    </view>
+                    <view class='l-item-f' bindtap="onSendSms">
+                        <i class='iconfont icon-icon-sms'></i>
+                    </view>
+                </view>
+                <view class='link-crad-item'>
+                    <view class='l-item-h'>
+                        <i class='iconfont icon-email'></i>
+                    </view>
+                    <view class='l-item-b-list'>
+                        <view class='l-item-b'>
+                            <view class='l-b-top'>{{visitors.Email}}</view>
+                            <view class='l-b-bottom'>邮箱</view>
+                        </view>
+                    </view>
+                </view>
+                <!-- <view class='link-crad-item'>
+                <view class='l-item-h'>
+                  <i class='iconfont icon-company'></i>
+                </view>
+                <view class='l-item-b-list'>
+                  <view class='l-item-b'>
+                    <view class='l-b-top'>上海联展软件技术有限公司</view>
+                    <view class='l-b-bottom'>公司</view>
+                  </view>
+                </view>
+              </view>
+              <view class='link-crad-item'>
+                <view class='l-item-h'>
+                  <i class='iconfont icon-bumen'></i>
+                </view>
+                <view class='l-item-b-list'>
+                  <view class='l-item-b'>
+                    <view class='l-b-top'>研发部</view>
+                    <view class='l-b-bottom'>部门</view>
+                  </view>
+                </view>
+              </view>
+              <view class='link-crad-item'>
+                <view class='l-item-h'>
+                  <i class='iconfont icon-zhiwei'></i>
+                </view>
+                <view class='l-item-b-list'>
+                  <view class='l-item-b'>
+                    <view class='l-b-top'>经理</view>
+                    <view class='l-b-bottom'>职位</view>
+                  </view>
+                </view>
+              </view> -->
+                <view class='link-crad-item'>
+                    <view class='l-item-h'>
+                        <i class='iconfont icon-dizhi'></i>
+                    </view>
+                    <view class='l-item-b-list'>
+                        <view class='l-item-b'>
+                            <view class='l-b-top'>上海.金沙江西路1555弄慧创国际3层</view>
+                            <view class='l-b-bottom'>地址</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!--\<<信息  -->
+        <view class='tab'>
+            <view class='tab-h'>
+                <view bindtap='onTabSwitch' class='tab-item selected' data-index='log'>
+                    <label>日志</label>
+                </view>
+                <view bindtap='onTabSwitch' class='tab-item {{tab_index=="img"?"selected":""}}' data-index='img'>
+                    <label>用户画像</label>
+                </view>
+            </view>
+            <view class='tab-b'>
+                <!-- <view wx:if="{{tab_index=='log'}}" class='tab-log'> -->
+                <view class='tab-log'>
+                    <view class='log'>
+                        <view class='log-add line'>
+                            <view class='log-add-round'></view>
+                            <view class='log-add-btn' bindtap='onAddLinkLog'>
+                                <i class="iconfont icon-tianjia"></i>
+                                <label>添加</label>
+                            </view>
+                        </view>
+            <view wx:for="{{logs}}" class='log-item line'>
+              <view class='log-content'>
+                <view class='log-time'>{{item.CreatedAt}}</view>
+                  <view wx:if="{{item.level == 0 }}" >
+                    <view class='log-msg0' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+                  <view wx:if="{{item.level == 1 }}" >
+                    <view class='log-msg1' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+                  <view wx:if="{{item.level == 2 }}" >
+                    <view class='log-msg2' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+                  <view wx:if="{{item.level == 3 }}" >
+                    <view class='log-msg3' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+              </view>
+            </view>
+                    </view>
+                </view>
+                <view wx:if="{{tab_index=='img'}}" class='tab-img'>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,101 @@
+/**=====================cell======================**/
+
+.cell {
+    position: relative;
+    padding-top: 14rpx;
+    line-height: 2.7;
+    font-size: 34rpx;
+}
+
+.cell-title {
+    padding-left: 30rpx;
+    font-size: 28rpx;
+    color: #888;
+}
+
+.cell-list {
+    background-color: #fff;
+    border-top: 1rpx solid #e5e5e5;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.cell-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid #e5e5e5;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    background-color: #fff;
+}
+
+.cell-header {
+    padding-right: 54rpx;
+}
+
+.cell-header i {
+    color: #6288d5;
+}
+
+.cell-body {
+    flex: 1;
+    font-size: 32rpx;
+}
+
+.cell-footer {
+    text-align: right;
+    color: #999;
+}
+
+
+/*
+.cell-list view:last-child{
+    border:0;
+}
+*/
+
+
+/* 带跳转的cell*/
+
+.cell-nav-hover {
+    opacity: 0.3;
+    background: #f0f0f0
+}
+
+.cell:first-child {
+    padding-top: 0;
+}
+
+.cell-list view:last-child {
+    border: 0;
+}
+
+.cell:last-child .cell-item {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.cell-text {
+    margin: 0;
+}
+
+textarea {
+    padding: 24rpx 0;
+    min-height: 150rpx;
+    width: 100%;
+}
+
+.template-tips {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    color: #999;
+    line-height: 1.2;
+    padding: 0 30rpx;
+}
+
+.btn {
+    font-size: 36rpx;
+    height: 88rpx;
+    line-height: 2.55555556;
+    margin-top: 62rpx;
+}

@@ -1,0 +1,65 @@
+<view class="page">
+    <view class="search {{filter.length>0?'':'search_not_value'}}">
+        <view class='search-body'>
+            <view class='search-input'>
+                <view class="search-box">
+                    <view class='search-icon'>
+                        <i class="iconfont icon-search"></i>
+                    </view>
+                    <input type='search' auto-focus placeholder='公司名称' bindinput='onFilterInput' value="{{filter}}"></input>
+                    <view class='search-delete' bindtap='onFilterDelete'>
+                        <i class="iconfont icon-guanbi_r"></i>
+                    </view>
+                </view>
+            </view>
+            <view class='search-btn' bindtap='onTapSearch'>
+                <view>搜索</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="page-body">
+        <view class='list'>
+            <view class='fitler-count'>搜索到{{count}}条数据</view>
+            <navigator url='/pages/exhibition/detail/detail?id={{item.RecordId}}' wx:for="{{message}}">
+                <view class='item'>
+                    <view class='item-left'>
+                        <image src='{{item.Logo}}' lazy-load="true"></image>
+                    </view>
+                    <view class='item-right'>
+                        <view class='item-company_name'>{{item.CompanyName}}</view>
+                        <view class='item-right-flex'>
+                            <view class='item-addr'>
+                                <label>{{item.BoothNo}}</label>
+                                <label> | </label>
+                                <label>{{item.City}}</label>
+                            </view>
+                            <view class='item-view'>
+                                <label>
+                                    <i class="iconfont icon-p-see"></i>
+                                </label>
+                                <label>{{item.PVNumber||0}}</label>
+                            </view>
+                        </view>
+                        <view class='item-right-flex'>
+                            <view class='item-label'>
+                                <label>{{item.Categories}}</label>
+                            </view>
+                            <view class='item-xx'>
+                                <i class="iconfont icon-collect collect"></i>
+                                <i class="iconfont icon-collect"></i>
+                                <i class="iconfont icon-collect"></i>
+                                <i class="iconfont icon-collect"></i>
+                                <i class="iconfont icon-collect"></i>
+                            </view>
+                        </view>
+                        <view class='item-imgs'  >
+                            <image wx:for-item="img" wx:for="{{item.ProductList}}" wx:for-item="tiems" src='{{tiems.PicList[0].PicPath}}'></image>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+        
+    </view>
+</view>

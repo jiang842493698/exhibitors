@@ -1,0 +1,30 @@
+<view class="page">
+        <view class="page-header"></view>
+        <view class="page-body">
+            <view class="panle">
+                <view class="panle-head">
+                    <view class="panle-title">选择模板</view>
+                    <view class="panle-add">
+                        <navigator url="/pages/other/smstemp/edit/edit" hover-class="">
+                            <i class="iconfont icon-tianjia"></i>
+                            <text>添加模板</text>
+                        </navigator>
+                    </view>
+                </view>
+                <view class="panle-body">
+                    <block>
+                        <view  bindtap="onSelected" class="{{name==item.Name?'activate':''}}" wx:for="{{result}}"   data-index="{{index}}" data-name='{{item.Name}}'>{{item.Name}}</view>
+                    </block>
+                </view>
+                <view class="panle-foot">
+                    <view class="panle-foot-title">预览</view>
+                    <view class="panle-foot-text">
+                        {{content==null?result[0].Content:content}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="page-footer">
+            <button class="btn btn-primary"  bindtap="onSend" hover-class="button-hover">发送</button>
+        </view>
+    </view>

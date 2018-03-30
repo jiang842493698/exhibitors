@@ -1,0 +1,69 @@
+
+.panle{
+    margin: 30rpx;
+    background: #fff;
+    padding-top: 8rpx;
+}
+.panle-head{
+    display: flex;
+    align-items: center;
+    padding: 40rpx 24rpx;
+}
+.panle-title{
+    flex: 1;
+    font-size: 34rpx;
+}
+.panle-add{
+    font-size: 28rpx;
+    color: #6288d5;
+}
+.panle-add i{
+    font-size: 28rpx;
+    padding-right:18rpx; 
+}
+.panle-body{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 24rpx;
+    padding-right: 24rpx;
+    padding-bottom:100rpx; 
+    border-bottom: 1rpx solid #e0e3e8;
+}
+.panle-body view{
+    font-size: 28rpx;
+    border: 1rpx solid #6288d5;
+    color: #6288d5;
+    padding:10rpx 20rpx;
+    margin: 10rpx;
+}
+.activate{
+    color: #fff !important;
+    background: #6288d5;
+}
+.panle-foot{
+padding: 30rpx;
+}
+.panle-foot-title{
+    padding: 18rpx;
+    text-align: center;
+    font-size: 34rpx;
+}
+.panle-foot-text{
+    padding:10rpx;
+    padding-top:18rpx;
+    padding-bottom:50rpx;
+    min-height: 140rpx;  
+    font-size: 28rpx;
+    line-height: 1.5;
+}
+.page-footer{
+    padding-top:94rpx;
+}
+.foot-btn{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10rpx 0;
+    background: #efeff4;
+}

@@ -1,0 +1,5 @@
+/* pages/exhibition/detail/log/edit/edit.wxss */
+
+/**=====================cell======================**/
+
+ @import "/pages/my/cards/detail/log/edit/edit.wxss"

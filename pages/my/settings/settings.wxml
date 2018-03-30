@@ -1,0 +1,43 @@
+<view class="page">
+    <view class='page-body'>
+        <view class='cell'>
+            <view class='cell-group'>
+                <navigator hover-class="nav-hover" url="/pages/my/settings/schedule/schedule" class='cell-item'>
+                    <view class='cell-item-h'>
+                        <i class="iconfont icon-richeng-xuanzhong"></i>
+                    </view>
+                    <view class='cell-item-b'>日程设置</view>
+                    <view class='badge'>
+                        <view>
+                        </view>
+                    </view>
+                    <view class='cell-item-f'>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </view>
+                </navigator>
+            </view>
+            <view class='cell-group'>
+                <navigator hover-class="nav-hover" url="/pages/my/settings/about/about" class='cell-item'>
+                    <view class='cell-item-h'>
+                        <i class="iconfont icon-guanyu"></i>
+                    </view>
+                    <view class='cell-item-b'>关于</view>
+                    <view class='cell-item-f'>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </view>
+                </navigator>
+            </view>
+            <view class='cell-group'>
+                <navigator hover-class="nav-hover"bindtap='qiehuanzhanghao' class='cell-item'>
+                    <view class='cell-item-h'>
+                        <i class="iconfont icon-qiehuanzhanghao"></i>
+                    </view>
+                    <view class='cell-item-b'>切换账号</view>
+                    <view class='cell-item-f'>
+                        <i class="iconfont icon-arrow-right"></i>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

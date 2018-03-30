@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#305ebc",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "约客搜索",
+  "usingComponents": {
+    "invite": "/component/invite/invite"
+  }
+}

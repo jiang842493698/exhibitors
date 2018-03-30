@@ -1,0 +1,95 @@
+<view class="component" hidden='{{data.isShow}}'>
+    <view class="component-mask"></view>
+    <view class="invite">
+        <view class="invite-content">
+            <view class="invite-header">
+                <label>{{title}}</label>
+            </view>
+            <view class="invite-body">
+                <view class="item">
+                    <label class="label">公司</label>
+                    <view class="value nowrap">{{invitationfirm}}</view>
+                </view>
+                <view class="item">
+                    <label class="label">联系人</label>
+                    <view class="value link">
+                        <view wx:for="{{data.links}}" class="link-item {{item.checked?'selected':''}}" data-index="{{index}}" bindtap="_onLink">
+                            <label class="link-name">{{item.name}}</label>
+                            <label class="link-job">({{item.job}})</label>
+                        </view>
+                    </view>
+                </view>
+                <view class="item">
+                    <label class="label">预约地点</label>
+                    <view class="value">
+                        <radio-group class="addr" bindchange="_onAddr">
+                            <view wx:for="{{data.addrs}}" class="radio">
+                                <view>
+                                    <radio color='#6288d5' value="{{item.value}}" checked="{{item.checked}}" index="{{index}}" />
+                                </view>
+                                <view>{{item.value}}</view>
+                            </view>
+                        </radio-group>
+                    </view>
+                </view>
+                <view class="item">
+                    <label class="label">预约时间</label>
+                    <view class="value" bindtap='onTime'>
+                        <view class="btn-time" >
+                            <view class="time-value {{data.times.date?'':'placeholder'}}">{{dateTime||'请选择预约时间'}} 
+                            {{endTime==""||endTime==null?'':'~'+endTime}}</view>
+                            <view>
+                                <i class="iconfont icon-arrow-right"></i>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="item">
+                    <label class="label">通知内容</label>
+                    <view class="value">
+                        <view class="content">
+                            {{contents}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!-- <view class="contentValue">
+              <label class='contentlabel'>本条短信花费<label>0.1</label>元</label>
+            </view> -->
+            <view class="invite-footer">
+
+                <view class='btn-group'>
+                    <view class='btn' bindtap='_onCancel'>取消</view>
+                    <view class='btn btn-primary' bindtap='_onConfirm'>确定</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+    <view class="datetime-picker" hidden='{{dateShow==true}}'>
+         <view class='datetime-picker-mask' bindtap='closeDatetime'></view> 
+        <view class="datetime-picker-content">
+            <view class="datetime-picker-body">
+                <view class="date">
+                    <view wx:for="{{date}}" class="date-item {{initialTime==item?'selected':''}}" bindtap='onDate' data-date='{{item}}'>{{item}}</view>
+                </view>
+                <view class="time">
+                    <view class="morning">
+                        <view class="time-title">上午(灰色为不可选,蓝色为可约时间)</view>
+                        <view class="time-body">
+                            <view wx:for="{{dateTimes}}" wx:if="{{item.type=='morning'}}" bindtap='onDateTime' data-date='{{item.start}}' data-end='{{item.end}}' data-name='{{item.name}}'  class="time-item {{item.State + item.myState > 0?'':'blue'}}">{{item.start}}~{{item.end}} <i class="iconfont icon-my" wx:if="{{item.myState == 1}}"></i>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="afternoon">
+                        <view class="time-title">下午(灰色为不可选,蓝色为可约时间)</view>
+                        <view class="time-body">
+                            <view wx:for="{{dateTimes}}" wx:if="{{item.type=='afternoon'}}" bindtap='onDateTime' data-date='{{item.start}}' data-end='{{item.end}}' data-name='{{item.name}}' class="time-item {{item.State + item.myState > 0?'':'blue'}}">{{item.start}}~{{item.end}}<i class="iconfont icon-my" wx:if="{{item.myState == 1}}"></i></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

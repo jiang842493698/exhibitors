@@ -1,0 +1,21 @@
+
+<view class="page">
+    <form bindsubmit="onSubmit">
+      <view class="page-body">
+      
+          <view class="log">
+              <view class="log-color">
+                  <view class="violet" bindtap='changeColor' data-color='violet'></view>
+                  <view class="green"  bindtap='changeColor' data-color='green'></view>
+                  <view class="yellow"  bindtap='changeColor' data-color='yellow'></view>
+              </view>
+              <view class="log-content {{color}}">
+                  <textarea placeholder='{{FocusBool?"请输入日志内容":""}}' placeholder-style='color:white' auto-focus auto-height value="{{content}}" maxlength="500" auto-height="true" cursor-spacing="100" name="content"  bindfocus="OnFocus"></textarea>
+              </view>
+          </view>
+      </view>
+      <view class="page-footer">
+        <button form-type="submit" class="btn btn-primary">确定</button>
+      </view>
+    </form>
+</view>

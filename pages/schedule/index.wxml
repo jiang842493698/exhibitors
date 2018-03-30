@@ -1,0 +1,179 @@
+<view class="page">
+    <view class="page-header">
+        <view class="filter">        
+            <view class="filter-item {{type==-1?'selected':''}}" bindtap='onAll' data-type='{{-1}}'>
+              <!-- <radio-group  bindtap='onAll' data-type='{{-1}}'> -->
+                <text>全部</text>
+                <!-- <radio hidden="true" value="0"></radio> -->
+                
+              <!-- </radio-group> -->
+            </view>
+            
+              <view  wx:for="{{date}}" class="filter-item {{type!=-1&&item==type?'selected':''}}" bindtap='onAll' data-type='{{item}}'>
+                  <text>{{item}}</text>
+                  <!-- <radio hidden="true" value="0"></radio> -->
+              </view>
+         
+            
+            
+            <!-- <view class="filter-item">
+                  <text>01/24</text>
+              </view>
+              <view class="filter-item">
+                  <text>01/25</text>
+              </view> -->
+        </view>
+    </view>
+    <view class="page-body">
+        <view class="schedule" wx:for="{{InvitationInfoExhi}}">
+         
+          <view wx:if="{{item.status==0}}">
+             <navigator url="/pages/match/detail/detail?id={{item.RecordId}}&status={{item.status}}&fettle={{item.fettle}}" class="schedule-item {{item.State==5?'success':item.status<5?'fail':''}}" hover-class="none">
+                
+                 <view class="date">{{item.MeetingTimeDate}}{{" "+item.MeetingTimeStart}}</view>
+                  <view class="content">
+                      <view class="top">
+                          <text class="name">{{item.ReceiverChild[0].Name}}<text>（{{item.ReceiverChild[0].Job}}）</text>
+
+                          </text>
+                          <text class="mob">{{item.ReceiverChild[0].Phone}}</text>
+                          <text class="boothno">{{item.MeetingPlace}}</text>
+                      </view>
+                      <view class="bottom">
+                          {{item.Receiver[0].CompanyName}}
+                      </view>
+                      <view wx:if="{{item.State==5}}">
+                        <view class="state state-success">已会面</view>
+                      </view>
+                      <view wx:if="{{item.State==6}}">
+                        <view class="state state-fail">失约</view>
+                      </view>
+                  </view>
+               
+               
+               
+            </navigator> 
+          </view>
+          <view wx:if="{{item.status==1}}">
+            <navigator url="/pages/match/detail/detail?id={{item.RecordId}}&status={{item.status}}&fettle={{item.fettle}}" class="schedule-item {{item.State==5?'success':item.status<5?'fail':''}}" hover-class="none">
+              <view class="date">{{item.MeetingTimeDate}}{{" "+item.MeetingTimeStart}}</view>
+              <view class="content">
+                  <view class="top">
+                      <text class="name">{{item.InitatorChild[0].Name}}<text>（{{item.InitatorChild[0].Job}}）</text>
+
+                      </text>
+                      <text class="mob">{{item.InitatorChild[0].Phone}}</text>
+                      <text class="boothno">{{item.MeetingPlace}}</text>
+                  </view>
+                  <view class="bottom">
+                      {{item.Initator[0].CompanyName}}
+                  </view>
+                  <view wx:if="{{item.State==5}}">
+                    <view class="state state-success">已会面</view>
+                  </view>
+                  <view wx:if="{{item.State==6}}">
+                    <view class="state state-fail">失约</view>
+                  </view>
+              </view>
+                
+            </navigator> 
+
+          </view>
+        </view>  
+         <view class="schedule" wx:for="{{matchVInfo}}">
+         
+          <view wx:if="{{item.status==0&&item.Type==1}}">
+            <navigator url="/pages/match/detail/detail?id={{item.VisitorReceiver[0].RecordId}}&status={{item.status}}&fettle={{item.fettle}}&type={{item.Type}}" class="schedule-item {{item.State==5?'success':item.status<5?'fail':''}}" hover-class="none">
+              <view class="date">{{item.MeetingTimeDate}}{{" "+item.MeetingTimeStart}}</view>
+              <view class="content">
+                  <view class="top">
+                      <text class="name">{{item.VisitorReceiver[0].Name}}<text>（{{item.VisitorReceiver[0].Job}}）</text>
+
+                      </text>
+                      <text class="mob">{{item.VisitorReceiver[0].Mob}}</text>
+                      <text class="boothno">{{item.MeetingPlace}}</text>
+                  </view>
+                  <view class="bottom">
+                      {{item.VisitorReceiver[0].CompanyName}}
+                  </view>
+                  <view wx:if="{{item.State==5}}">
+                    <view class="state state-success">已会面</view>
+                  </view>
+                  <view wx:if="{{item.State==6}}">
+                    <view class="state state-fail">失约</view>
+                  </view>
+              </view>
+            </navigator>
+          </view> 
+          <view wx:if="{{item.status==1&&item.Type==1}}">
+            <navigator url="/pages/match/detail/detail?id={{item.InitatorChild[0].RecordId}}&status={{item.status}}&fettle={{item.fettle}}&type={{item.Type}}" class="schedule-item {{item.State==5?'success':item.status<5?'fail':''}}" hover-class="none">
+              <view class="date">{{item.MeetingTimeDate}}{{" "+item.MeetingTimeStart}}</view>
+              <view class="content">
+                  <view class="top">
+                      <text class="name">{{item.InitatorChild[0].Name}}<text>（{{item.InitatorChild[0].Job}}）</text>
+
+                      </text>
+                      <text class="mob">{{item.InitatorChild[0].Phone}}</text>
+                      <text class="boothno">{{item.MeetingPlace}}</text>
+                  </view>
+                  <view class="bottom">
+                      {{item.Initator[0].CompanyName}}
+                  </view>
+                  <view wx:if="{{item.State==5}}">
+                    <view class="state state-success">已会面</view>
+                  </view>
+                  <view wx:if="{{item.State==6}}">
+                    <view class="state state-fail">失约</view>
+                  </view>
+              </view>
+            </navigator> 
+          </view>
+          <view wx:if="{{item.status==0&&item.Type==0}}">
+            <navigator url="/pages/match/detail/detail?id={{item.ReceiverChild[0].RecordId}}&status={{item.status}}&fettle={{item.fettle}}&type={{item.Type}}" class="schedule-item {{item.State==5?'success':item.status<5?'fail':''}}" hover-class="none">
+              <view class="date">{{item.MeetingTimeDate}}{{" "+item.MeetingTimeStart}}</view>
+              <view class="content">
+                  <view class="top">
+                      <text class="name">{{item.ReceiverChild[0].Name}}<text>（{{item.ReceiverChild[0].Job}}）</text>
+
+                      </text>
+                      <text class="mob">{{item.ReceiverChild[0].Phone}}</text>
+                      <text class="boothno">{{item.MeetingPlace}}</text>
+                  </view>
+                  <view class="bottom">
+                      {{item.Receiver[0].CompanyName}}
+                  </view>
+                  <view wx:if="{{item.State==5}}">
+                    <view class="state state-success">已会面</view>
+                  </view>
+                  <view wx:if="{{item.State==6}}">
+                    <view class="state state-fail">失约</view>
+                  </view>
+              </view>
+            </navigator> 
+          </view>
+          <view wx:if="{{item.status==1&&item.Type==0}}">
+            <navigator url="/pages/match/detail/detail?id={{item.VisitorInitator[0].RecordId}}&status={{item.status}}&fettle={{item.fettle}}&type={{item.Type}}" class="schedule-item {{item.State==5?'success':item.status<5?'fail':''}}" hover-class="none">
+              <view class="date">{{item.MeetingTimeDate}}{{" "+item.MeetingTimeStart}}</view>
+              <view class="content">
+                  <view class="top">
+                      <text class="name">{{item.VisitorInitator[0].Name}}<text>（{{item.VisitorInitator[0].Job}}）</text>
+
+                      </text>
+                      <text class="mob">{{item.VisitorInitator[0].Mob}}</text>
+                      <text class="boothno">{{item.MeetingPlace}}</text>
+                  </view>
+                  <view class="bottom">
+                      {{item.VisitorInitator[0].CompanyName}}
+                  </view>
+                  <view wx:if="{{item.State==5}}">
+                    <view class="state state-success">已会面</view>
+                  </view>
+                  <view wx:if="{{item.State==6}}">
+                    <view class="state state-fail">失约</view>
+                  </view>
+              </view>
+            </navigator> 
+          </view>
+        </view>  
+    </view>
+</view>

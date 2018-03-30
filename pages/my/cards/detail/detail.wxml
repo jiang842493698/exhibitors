@@ -1,0 +1,123 @@
+ <view class="page">
+    <view class="page-header  {{isMask?'not-mask':''}}">
+        <swiper indicator-dots="{{true}}" class="crad-swipaer" indicator-active-color="#fff" autoplay="{{false}}">
+            <swiper-item>
+                <image src="{{link.Image}}"></image>
+            </swiper-item>
+            <swiper-item>
+                <image src="{{link.BackImage}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="crad-layer" bindtouchstart="OnTouchStart" bindtouchend="OnTouchEnd">
+            <view class="top">
+                <view class="crad-name">
+                    <label class="name">{{link.Name}}</label>
+                    <label class="job">{{link.Job[0].value}}</label>
+                </view>
+                <view class="crad-company">{{link.Company[0].value}}</view>
+            </view>
+            <view class="bottom">
+                <navigator url="/pages/my/cards/select/grouping/grouping?id={{link.RecordId}}&name={{group}}" class="bottom-item" hover-class="none">
+                    <view class="left">
+                        <i class="iconfont icon-qunicon"></i>
+                        <label>标签：</label>
+                        <label>{{group ||'无标签'}}</label>
+                    </view>
+                </navigator>
+                <navigator url="/pages/my/cards/detail/remind/remind?id={{link.RecordId}}" class="bottom-item" hover-class="none">
+                    <view class="left">
+                        <i class="iconfont icon-naozhong"></i>
+                        <label>提醒：</label>
+                        <label>{{reminds[0].RemindContent}}        </label>
+                        <!-- <label>  {{reminds[0].RemindDate}}</label>  -->
+                    </view>
+                    <label class="right"></label>
+                </navigator>
+                <navigator url="/pages/my/cards/detail/log/log?id={{link.RecordId}}" class="bottom-item" hover-class="none">
+                    <view class="left">
+                        <i class="iconfont icon-rizhi"></i>
+                        <label>日志：</label>
+                        <label>{{logs[0].info}}</label>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="page-body {{isMore?'more':''}}">
+        <view class="list">
+            <view class="list-group" wx:for="{{link.Phone}}">
+                <view class="list-item">
+                    <view class="list-left" bindtap='OnCall'>
+                        <i class='iconfont icon-dianhua'  ></i>
+                    </view>
+                    <view class="list-body" bindtap='OnCall' data-tel='{{item.value}}'>
+                        <view class="value">{{item.value}}</view>
+                        <view class="label">{{item.label}}</view>
+                    </view>
+                    <view class="list-right">
+                        <i class='iconfont icon-icon-sms' data-tel='{{item.value}}'  bindtap='onSendSms' ></i>
+                    </view>
+                </view>
+                <!-- <view class="list-item" hidden='{{link.Tel.length>0?false:true}}'>
+                    <view class="list-left"></view>
+                    <view class="list-body" bindtap='OnCall' data-tel='{{link.Tel[0].value}}'>
+                        <view class="value">{{link.Tel[0].value}}</view>
+                        <view class="label">电话</view>
+                    </view>
+                </view> -->
+            </view>
+            <view class="list-group">
+                <view class="list-item">
+                    <view class="list-left">
+                        <i class='iconfont icon-email'></i>
+                    </view>
+                    <view class="list-body">
+                        <view class="value">{{link.Email[0].value}}</view>
+                        <view class="label">邮箱</view>
+                    </view>
+                </view>
+            </view>
+            <view class="list-group">
+                <view class="list-item">
+                    <view class="list-left">
+                        <i class='iconfont icon-dizhi'></i>
+                    </view>
+                    <view class="list-body">
+                        <view class="value">{{link.Address[0].value}}</view>
+                        <view class="label">地址</view>
+                    </view>
+                </view>
+            </view>
+            <view class="list-group">
+                <view class="list-item">
+                    <view class="list-left">
+                        <i class='iconfont icon-icontishi'></i>
+                    </view>
+                    <view class="list-body">
+                        <view class="value">http://weixin.qq.com/r/xunzqypepep95...</view>
+                        <view class="label">其他</view>
+                    </view>
+                </view>
+                <view class="list-item">
+                    <view class="list-left"></view>
+                    <view class="list-body">
+                        <view class="value">www.huizhanren.com</view>
+                        <view class="label">公司网址</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="btn-wrap">
+            <navigator class="btn btn-primary" url='/pages/my/cards/detail/edit/edit?id={{link.RecordId}}&group={{group}}'>编辑名片</navigator>
+            <view class="btn" bindtap='onDelete' data-type='{{link.RecordId}}'>删除名片</view>
+            <view class="crad-pull" bindtap="onMore">
+                <i class="iconfont icon-xiala"></i>
+            </view>
+        </view>
+    </view>
+</view> 
+
+
+  
+
+

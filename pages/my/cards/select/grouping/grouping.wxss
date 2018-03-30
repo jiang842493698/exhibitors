@@ -1,0 +1,42 @@
+@import '/pages/my/cards/select/send-sms/select-temp/select-temp';
+.panle2 {
+    padding: 28rpx 48rpx;
+}
+
+.panle2-title {
+    font-size: 28rpx;
+    color: #999;
+    padding: 22rpx 0;
+}
+
+.panle2-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.panle2-list view {
+    font-size: 28rpx;
+    background: #fff;
+    border-radius: 26rpx;
+    box-shadow: 0 0 5rpx 0 #999;
+    padding: 0 22rpx;
+    height: 52rpx;
+    margin: 10rpx;
+    line-height: 200%;
+}
+.page-footer {
+    padding: 40rpx 0;
+}
+.radio-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 24rpx;
+    padding-right: 24rpx;
+    padding-bottom:100rpx; 
+    border-bottom: 1rpx solid #e0e3e8;
+}
+.radio {
+    font-size: 28rpx;
+}

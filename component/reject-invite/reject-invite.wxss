@@ -1,0 +1,118 @@
+.component {}
+
+.component-mask {
+    z-index: 9998;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    opacity: .5;
+}
+
+.reject-invite {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.reject-invite-content {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 20% auto;
+    outline: 0;
+    width: 560rpx;
+    background-color: #fff;
+    border-radius: 8rpx;
+    overflow: hidden;
+    /* box-shadow: 0 20rpx 100rpx -20rpx #333; */
+    padding-top: 10rpx;
+    height: auto;
+}
+
+.reject-invite-header {
+    text-align: center;
+    padding: 20rpx;
+    font-size: 36rpx;
+    color: #333;
+    z-index: 2;
+}
+
+.reject-invite-body {
+    padding: 0 30rpx;
+}
+
+.reject-invite-footer {
+    border-top: 1rpx solid #f6f1e8;
+    background-color: #eee;
+}
+
+.btn-group {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    align-content: center;
+    font-size: 36rpx;
+    text-align: center;
+}
+
+.btn-group .btn {
+    flex: 1;
+    padding: 30rpx 0;
+    border-right: 1rpx solid #f6f1e8;
+    background-color: #fff;
+}
+
+.btn-group .btn:last-child {
+    border-right: 0;
+}
+
+.btn-group .btn:hover {
+    opacity: 0.6;
+}
+
+.btn-group .btn-primary {
+    color: #6288d5;
+}
+
+.content input {
+    height: 70rpx;
+    line-height: 70rpx;
+    padding: 0 30rpx;
+    border: 2rpx solid #e6e6e6;
+    border-radius: 2rpx;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}
+
+.wrap {
+    padding: 36rpx 0;
+    font-size: 28rpx;
+}
+
+.wrap label {
+    color: #999;
+}
+
+.reject {
+    padding: 30rpx 0;
+    color: #6288d5;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reject-item {
+    margin-right: 20rpx;
+    margin-bottom: 10rpx;
+}

@@ -1,0 +1,27 @@
+<view class="component">
+    <view class="component-mask"></view>
+    <view class="reject-invite">
+        <view class="reject-invite-content">
+            <view class="reject-invite-header">
+                <label>拒绝约请</label>
+            </view>
+            <view class="reject-invite-body">
+                <view class="content">
+                    <input class="" placeholder="请输入拒绝原因" focus    bindinput='onFilterInput' value='{{value}}' />
+                </view>
+                 <view class="wrap">
+                    <label>常用</label>
+                    <view class="reject">
+                        <view wx:for="{{list}}" class="reject-item" data-index="{{index}}" data-value="{{item}}" bindtap="_onSelected">{{item}}</view>
+                    </view>
+                </view> 
+            </view>
+            <view class="reject-invite-footer">
+                <view class='btn-group'>
+                    <view class='btn' bindtap='_onCancel'>取消</view>
+                    <view class='btn btn-primary' bindtap='_onConfirm'>完成</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,103 @@
+ <view class="page">
+    <view class="page-body">
+        <view wx:if="{{message.length>0}}" class="list">
+          <view wx:for="{{message}}">
+            <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:key="">
+              <view class="list-item {{item.isTouchMove?'delete':''}}" >
+                <view class="list-body">
+                    <view class="list-title">
+                        <view class="unread" hidden='{{item.State==1?false:true}}'></view>
+                        <view class="title">{{item.Title==null?"报告":item.Title}}</view>
+                        <view class="date">{{item.time}}</view>
+                    </view>
+                    <view class="list-content">
+                        {{item.Content}}
+                    </view>
+                </view>
+                <view class="list-delete" bindtap="onDelete" data-del='{{item.RecordId}}' data-name='{{userInfo.UserName}}'>
+                    <text>删除</text>
+                </view>
+              </view>
+            </view>
+          </view>
+            <!--<view class="list-item">
+                <view class="list-body">
+                    <view class="list-title">
+                        <view class="unread" hidden='{{true}}'></view>
+                        <view class="title">报名</view>
+                        <view class="date">1分钟前</view>
+                    </view>
+                    <view class="list-content">
+                        贵司已报名参加第28届中国展，请将采购指南资料于2月 28日前递交资料资料资料资料资料资料资料..
+                    </view>
+                </view>
+                <view class="list-delete" bindtap="onDelete">
+                    <text>删除</text>
+                </view>
+            </view>
+            <view class="list-item">
+                <view class="list-body">
+                    <view class="list-title">
+                        <view class="unread"></view>
+                        <view class="title">报名</view>
+                        <view class="date">1分钟前</view>
+                    </view>
+                    <view class="list-content">
+                        贵司已报名参加第28届中国展，请将采购指南资料于2月 28日前递交资料资料资料资料资料资料资料..
+                    </view>
+                </view>
+                <view class="list-delete" bindtap="onDelete">
+                    <text>删除</text>
+                </view>
+            </view>
+            <view class="list-item">
+                <view class="list-body">
+                    <view class="list-title">
+                        <view class="unread"></view>
+                        <view class="title">报名</view>
+                        <view class="date">1分钟前</view>
+                    </view>
+                    <view class="list-content">
+                        贵司已报名参加第28届中国展，请将采购指南资料于2月 28日前递交资料资料资料资料资料资料资料..
+                    </view>
+                </view>
+                <view class="list-delete">
+                    <text>删除</text>
+                </view>
+            </view>
+            <view class="list-item delete">
+                <view class="list-body">
+                    <view class="list-title">
+                        <view class="unread"></view>
+                        <view class="title">报名</view>
+                        <view class="date">1分钟前</view>
+                    </view>
+                    <view class="list-content">
+                        贵司已报名参加第28届中国展，请将采购指南资料于2月 28日前递交资料资料资料资料资料资料资料..
+                    </view>
+                </view>
+                <view class="list-delete" bindtap="onDelete">
+                    <text>删除</text>
+                </view>
+            </view> -->
+        </view>
+        <view wx:if="{{message.length==0}}" class="no_content">暂无通知</view>
+    </view>
+</view> 
+
+<!-- <view class="container">
+ <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{message}}" wx:key="">
+  <view class="content">
+    <view class='yuandianborde'>
+      <view class='yuandian'></view>
+      <view class='yuandiankongge'></view>
+    </view>
+    <view class='messagetitle'>通知/消息</view>
+    <view class='item-trim'>
+      <view class='item-date'>{{item.time}}</view>
+    </view>
+    <view class='messagevalue'>{{item.value}}</view>
+  </view>
+  <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+ </view>
+</view> -->

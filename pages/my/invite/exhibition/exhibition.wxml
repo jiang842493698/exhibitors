@@ -1,0 +1,149 @@
+<view class='page'>
+    <view class='page-head'>
+        <view class='info' style=''>
+            <view class='info-logo'>
+                <image src='{{visitors.Imgs}}'></image>
+            </view>
+            <view class='info-company_name'>{{visitors.CompanyName}}</view>
+            <view class='info-addr'>
+                <label>{{visitors.BoothNo}}</label>
+                <label> | </label>
+                <label>{{visitors.City}}</label>
+                <label class='info-label'>
+                    <label wx:if="互联网">{{visitors.Industry}}</label>
+                </label>
+            </view>
+
+            <view class='info-foot'>
+                <view class="invite-addr">会面地点：{{visitors.MeetingPlace}}</view>
+                <view class="invite-date">预约时间：{{visitors.dateTime}}</view>
+                <view class='info-collect'>
+                    <i class="iconfont icon-collect"></i>
+                    <label>收藏</label>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <view class='page-body'>
+        <view class='product'>
+            <view class='p-head'>
+                <view class='p-title'>展品</view>
+                <navigator class='p-nav' url="/pages/exhibition/detail/product/product?id={{info.RecordId}}">
+                    <i class="iconfont icon-arrow-right2"></i>
+                </navigator>
+            </view>
+            <view class='p-body'>
+                <view class='p-imgs' >
+                    <navigator wx:for="{{visitors.ProductList}}" wx:for-item = "pro" url="/pages/exhibition/detail/product/detail/detail?index={{index}}&id={{info.RecordId}}" class='p-item'>
+                        <view class='p-img'>
+                            <image src='{{pro.PicList[0].PicPath}}'></image>
+                        </view>
+                        <view class='p-title'>{{pro.Name}}</view>
+                    </navigator>
+                     <!-- <navigator url="/pages/exhibition/detail/product/detail/detail?index={{index}}&id={{info.RecordId}}" class='p-item'>
+                        <view class='p-img'>
+                            <image src='/assets/images/other/exhibits_1.png'></image>
+                        </view>
+                        <view class='p-title'>BPM</view>
+                    </navigator>
+                    <navigator url="/pages/exhibition/detail/product/detail/detail?index={{index}}&id={{info.RecordId}}" class='p-item'>
+                        <view class='p-img'>
+                            <image src='/assets/images/other/exhibits_1.png'></image>
+                        </view>
+                        <view class='p-title'>BPM</view>
+                    </navigator>
+                    <navigator url="/pages/exhibition/detail/product/detail/detail?index={{index}}&id={{info.RecordId}}" class='p-item'>
+                        <view class='p-img'>
+                            <image src='/assets/images/other/exhibits_1.png'></image>
+                        </view>
+                        <view class='p-title'>BPM</view>
+                    </navigator>  -->
+                    <label wx:if="{{item.ProductList.length==0}}">暂无产品</label>
+                </view>
+            </view>
+        </view>
+        <view class='introduction'>
+            <view class='i-head'>
+                <view class='i-title'>简介</view>
+            </view>
+            <view class='i-body {{isContentMore?"i-content-open":""}}'>
+                <view class='i-content'>
+                    {{visitors.Introduction||'暂无简介'}}
+                </view>
+                <view wx:if="{{info.Introduction.length>80}}" class='i-more' style='{{isContentMore?"transform: rotate(180deg);":""}}' bindtap="onContentMore">
+                    <i class="iconfont icon-xiala"></i>
+                </view>
+            </view>
+        </view>
+        <view class='visitor'>
+            <view class='v-head'>
+                <view class='v-title'>
+                    <label>访客</label>
+                    <label>({{visitors.PVNumber}})</label>
+                </view>
+            </view>
+            <view class='v-body' >
+              <view class='v-image' wx:for="{{visitors.PVNumber}}" wx:for-index="index">
+                <view wx:if="{{index < 10}}">
+                     <image src='{{item.image==null||item.image==""?"/assets/images/other/not_logo.png":item.image}}'></image>
+                </view>
+              </view>
+            </view>
+        </view>
+        <view class='tab'>
+            <view class='tab-h'>
+                <view bindtap='onTabSwitch' class='tab-item selected' data-index='log'>
+                    <label>日志</label>
+                </view>
+                <view bindtap='onTabSwitch' class='tab-item {{tab_index=="img"?"selected":""}}' data-index='img'>
+                    <label>用户画像</label>
+                </view>
+            </view>
+            <view class='tab-b'>
+                <!-- <view wx:if="{{tab_index=='log'}}" class='tab-log'> -->
+                <view class='tab-log'>
+                    <view class='log'>
+                        <view class='log-add line'>
+                            <view class='log-add-round'></view>
+                            <view class='log-add-btn' bindtap='onAddLinkLog'>
+                                <i class="iconfont icon-tianjia"></i>
+                                <label>添加</label>
+                            </view>
+                        </view>
+            <view wx:for="{{logs}}" class='log-item line'>
+              <view class='log-content'>
+                <view class='log-time'>{{item.CreatedAt}}</view>
+                  <view wx:if="{{item.level == 0 }}" >
+                    <view class='log-msg0' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+                  <view wx:if="{{item.level == 1 }}" >
+                    <view class='log-msg1' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+                  <view wx:if="{{item.level == 2 }}" >
+                    <view class='log-msg2' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+                  <view wx:if="{{item.level == 3 }}" >
+                    <view class='log-msg3' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+              </view>
+            </view>
+                    </view>
+                </view>
+                <view wx:if="{{tab_index=='img'}}" class='tab-img'>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='page-foot'>
+        Copyright © 2017 huizhanren.com All Rights Reserved
+    </view>
+</view>

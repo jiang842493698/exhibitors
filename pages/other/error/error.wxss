@@ -1,0 +1,18 @@
+.error {
+    text-align: center;
+    margin-top: 25%;
+    color: #333;
+}
+
+.error image {
+    width: 256rpx;
+    height: 256rpx;
+}
+.title{
+    font-size: 60rpx;
+    margin-top: 50rpx;
+    margin-bottom: 30rpx;
+}
+.content{
+    font-size: 30rpx;
+}

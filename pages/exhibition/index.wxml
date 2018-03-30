@@ -1,0 +1,93 @@
+<view class="page">
+  <view class='filter'>
+    <view class="filter-body">
+      <view class='filter-item filter-item1'>
+        <view class='item-title {{filter_dropdown.area?"show":""}}' data-type='area' bindtap='onFilterPull'>
+          <label>{{filter.area||'不限区域'}}</label>
+
+          <view style='{{filter_dropdown.area?"transform: rotate(180deg);":""}}'>
+            <i class="iconfont icon-xiala"></i>
+          </view>
+        </view>
+        <view wx:if="{{filter_dropdown.area}}" class="filter-dropdown-list">
+          <view data-value='' data-type='area' bindtap='onFilterSelect'>不限区域</view>
+          <view data-value='{{item}}' data-type='area' bindtap='onFilterSelect' wx:for="{{filter.list.areas}}">{{item}}</view>
+        </view>
+      </view>
+      <view class='filter-item filter-item1'>
+        <view class='item-title  {{filter_dropdown.type?"show":""}}' data-type='type' bindtap='onFilterPull'>
+          <label>{{filter.type||'不限分类'}}</label>
+          <view style='{{filter_dropdown.type?"transform: rotate(180deg);":""}}'>
+            <i class="iconfont icon-xiala"></i>
+          </view>
+        </view>
+        <view wx:if="{{filter_dropdown.type}}" class="filter-dropdown-list">
+          <view data-value='' data-type='type' bindtap='onFilterSelect'>不限分类</view>
+          <view data-value='{{item}}' data-type='type' bindtap='onFilterSelect' wx:for="{{filter.list.types}}">{{item}}</view>
+        </view>
+      </view>
+      <view class='filter-item filter-item1'>
+        <view class='item-title  {{filter_dropdown.order?"show":""}}' data-type='order' bindtap='onFilterPull'>
+          <label>{{filter.order.name||'默认排序'}}</label>
+          <view style='{{filter_dropdown.order?"transform: rotate(180deg);":""}}'>
+            <i class="iconfont icon-xiala"></i>
+          </view>
+        </view>
+        <view wx:if="{{filter_dropdown.order}}" class="filter-dropdown-list">
+          <view data-value='' data-type='order' bindtap='onFilterSelect'>默认排序</view>
+          <view data-value='{{item.value}}' data-name='{{item.name}}' data-type='order' bindtap='onFilterSelect' wx:for="{{filter.list.orders}}">{{item.name}}</view>
+        </view>
+      </view>
+      <view class='filter-item filter-item4' bindtap='a'>
+        <navigator url='/pages/exhibition/search/search'>
+          <view class='item-title item-search'>
+            <i class="iconfont icon-search"></i>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-body">
+    <view class='list' bindtap='a'>
+      <navigator wx:for="{{match_exs}}" url='/pages/exhibition/detail/detail?id={{item.RecordId}}'>
+        <view class='item'>
+          <view class='item-left'>
+            <image src='{{item.Logo==""?"/assets/images/other/exhibits_1.png":item.Logo}}' lazy-load="true"></image>
+          </view>
+          <view class='item-right'>
+            <view class='item-company_name'>{{item.CompanyName}}</view>
+            <view class='item-right-flex'>
+              <view class='item-addr'>
+                <label>{{item.BoothNo}}</label>
+                <label> | </label>
+                <label>{{item.City}}</label>
+              </view>
+              <view class='item-view'>
+                  <label>
+                    <i class="iconfont icon-p-see"></i>
+                  </label>
+                  <label>{{item.PVNumber||0}}</label>
+              </view>
+            </view>
+            <view class='item-right-flex'>
+              <view class='item-label'>
+                <label  wx:if="{{item.Categories.length>0}}">{{item.Categories}}</label>
+              </view>
+              <view class='item-xx'>
+                <i class="iconfont icon-collect collect"></i>
+                <i class="iconfont icon-collect"></i>
+                <i class="iconfont icon-collect"></i>
+                <i class="iconfont icon-collect"></i>
+                <i class="iconfont icon-collect"></i>
+              </view>
+            </view>
+            <view class='item-imgs'>
+              <image wx:for="{{item.Imgs}}" wx:for-item="img" lazy-load="true" src='{{img}}'></image>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

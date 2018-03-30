@@ -1,0 +1,52 @@
+page {
+    background: #efeff4;
+    font-size: 28rpx;
+}
+
+.remind {}
+
+.r-text {}
+
+.r-text textarea {
+    min-height: 180rpx;
+    width: 100%;
+    background: #fff;
+    margin: 20rpx 0 20rpx 0;
+    padding: 24rpx 30rpx 24rpx 30rpx;
+    border-top: 1rpx solid #e6e6e6;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.r-datetime {
+    border-top: 1rpx solid #e6e6e6;
+    border-bottom: 1rpx solid #e6e6e6;
+    background: #fff;
+    padding: 30rpx;
+    overflow: auto;
+}
+
+.r-datetime view:first-child {
+    float: left;
+}
+
+.r-datetime view {
+    float: right;
+}
+
+.r-datetime view view {
+    float: right;
+}
+
+.r-d-date {
+    padding-right: 16rpx;
+}
+
+.r-btn {
+    padding-top: 92rpx;
+}
+
+.r-btn button {
+    font-size: 36rpx;
+    height: 88rpx;
+    line-height: 2.5;
+}

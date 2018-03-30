@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#305ebc",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "约客",
+  "enablePullDownRefresh":true,
+  "usingComponents":{
+    "invite":"/component/invite/invite"
+  }
+}

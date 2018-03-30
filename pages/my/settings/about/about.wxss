@@ -1,0 +1,44 @@
+.page-header {
+    padding-top: 120rpx;
+    text-align: center;
+}
+
+.page-header image {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.version {
+    margin-top: 46rpx;
+    font-size: 30rpx;
+}
+
+.page-body {
+    margin-top: 168rpx;
+    padding-left: 180rpx;
+    font-size: 30rpx;
+    color: #333;
+    line-height: 30rpx;
+}
+
+.page-footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.state {
+    font-size: 28rpx;
+    color: #5b8bed;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+.company{
+    font-size: 28rpx;
+    color: #999;
+}
+.copyright{
+    font-size: 20rpx;
+    color: #b2b2b2;
+}

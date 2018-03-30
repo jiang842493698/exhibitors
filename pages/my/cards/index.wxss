@@ -1,0 +1,257 @@
+
+.search {
+    background-color: #305ebc;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+.btn_left {
+    flex-grow: 1;
+}
+
+.search .btn_search {
+    display: flex;
+    display: -webkit-flex;
+    background-color: #fff;
+    border-radius: 28rpx;
+    width: 560rpx;
+    height: 56rpx;
+    margin: 16rpx 0;
+    font-size: 26rpx;
+    text-align: center;
+    color: #b2b2b2;
+    flex-grow: 2;
+    align-items: center;
+}
+
+.search .btn_search i {
+    font-size: 26rpx;
+}
+
+.search .btn_search>view {
+    width: 100%;
+}
+
+.search .btn_search:hover {
+    opacity: 0.6;
+}
+
+.btn_dropdown {
+    text-align: center;
+    flex-grow: 1;
+    color: #fff;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+}
+
+.btn_icon {
+    width: 100%;
+}
+
+.btn_icon i {
+    font-size: 46rpx;
+}
+
+.btn_dropdown_list {
+    opacity: 1;
+    background-color: #fff;
+    position: absolute;
+    top: 88rpx;
+    right: 8rpx;
+    width: 240rpx;
+    border-radius: 3rpx;
+    box-shadow: 0 2rpx 2rpx 3rpx rgba(155, 153, 154, 0.2);
+    font-size: 28rpx;
+    color: #6288d5;
+    animation: animation-choose-d 0.6s ease-in-out;
+    -webkit-animation: animation-choose-d 0.6s ease-in-out;
+}
+
+.btn_dropdown_list::before {
+    content: "";
+    width: 0;
+    border-width: 12px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    /* transparent 设置边框颜色透明 */
+    position: absolute;
+    top: -38rpx;
+    right: 26rpx;
+}
+
+@keyframes animation-choose-d {
+    from {
+        opacity: 0;
+        top: 110rpx;
+    }
+    to {
+        opacity: 1;
+        top: 88rpx;
+    }
+}
+
+@-webkit-keyframes animation-choose-d {
+    from {
+        opacity: 0;
+        top: 110rpx;
+    }
+    to {
+        opacity: 1;
+        top: 88rpx;
+    }
+}
+
+.btn_dropdown_list navigator {
+    height: 54rpx;
+    border-bottom: 0.1px solid rgba(155, 153, 154, 0.2);
+    padding: 16rpx 0;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.btn_dropdown_list navigator i {
+    padding: 16rpx;
+    font-size: 34rpx;
+}
+
+.page-body {
+    padding-top: 110rpx;
+    background: #efeff4;
+    padding-bottom: 100rpx;
+}
+
+
+/**=====================客户分组======================**/
+
+.group {
+    background: #fff;
+}
+
+.group-title {
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+    height: 90rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    border-bottom: 1rpx solid #efeff4;
+}
+
+.group-title:hover {
+    opacity: 0.6;
+}
+
+.group-title-head {}
+
+.group-title-body {
+    flex: 1;
+}
+
+.group-title-foot {
+    display: flex;
+    color: #a9a9a9;
+}
+
+.group-title-foot view:first-child {
+    padding-right: 20rpx;
+}
+
+.group-title-foot i {
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.group-title-bottom {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+
+.group-title-top {
+    transform: rotate(180deg);
+}
+
+.group-list {}
+
+.group-order {
+    font-size: 28rpx;
+    color: #6288d5;
+    padding: 26rpx 26rpx 6rpx 30rpx;
+}
+
+.order-list {}
+
+.order-item {
+    display: flex;
+    border-bottom: 1rpx solid #efeff4;
+    padding-bottom: 26rpx;
+    padding-right: 30rpx;
+    padding-left: 30rpx;
+}
+
+.group .order-list:last-child {
+    border-bottom: 0;
+    margin-bottom: 20rpx;
+}
+
+.order-list .order-item:last-child {
+    border-bottom: 0;
+}
+
+.item-head {
+    padding-top: 30rpx;
+    padding-right: 20rpx;
+}
+
+.item-body {
+    flex: 1;
+    font-size: 28rpx;
+    color: #b2b2b2;
+}
+
+.item-name {
+    padding-top: 32rpx;
+    padding-bottom: 26rpx;
+}
+
+.item-name text:first-child {
+    font-size: 34rpx;
+    color: #000;
+    padding-right: 16rpx;
+}
+
+.item-name text:last-child {}
+
+.item-company {}
+
+.item-foot {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+}
+
+.item-foot .active {
+    color: #6288d5;
+    /* border: 1rpx solid #6288d5; */
+}
+
+.icon-round {
+    margin-right: 12rpx;
+    color: #b2b2b2;
+}
+
+.icon-round view {
+    width: 100%;
+}
+
+.icon-round i {
+    font-size: 34rpx;
+}
+
+.icon-active {
+    color: #6288d5;
+}

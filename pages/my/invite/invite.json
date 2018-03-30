@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#305ebc",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的约请",
+  "usingComponents": {
+        "reject-invite": "/component/reject-invite/reject-invite"
+  }
+}

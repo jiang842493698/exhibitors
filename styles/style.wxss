@@ -1,0 +1,88 @@
+page {
+     background-color: #efeff4; 
+    /* background-color:blue; */
+}
+/* cell */
+.m-cell {
+    margin-bottom: 16rpx;
+}
+
+.cell-item {
+    background-color: #efeff4;
+}
+
+.cell-body {
+    display: flex;
+    padding: 20rpx 30rpx;
+    background-color: #fff;
+}
+
+.cell-body:active {
+    opacity: .6;
+}
+
+.cell-right {
+    flex: 1;
+}
+
+.cell-icon {
+    padding-top: 20rpx;
+    padding-right: 30rpx;
+    padding-bottom: 20rpx;
+}
+
+.cell-icon image {
+    width: 68rpx;
+    height: 68rpx;
+}
+
+.cell-badge {
+    position: relative;
+}
+
+.cell-badge .badge-body {
+    position: absolute;
+    top:-18rpx;
+    right:-12rpx;    
+}
+
+.badge-body .badge {
+    color: #FFF;
+    font-size: 18rpx;
+    position: relative;
+    display: inline-block;
+    border-radius: 1000px;
+    line-height: 1;
+    padding: 3px 5px;
+    white-space: nowrap;
+    background-color: #D0D0D0;
+}
+
+.badge-body .badge-orange {
+    background-color: #fe5e18;
+}
+
+.cell-footer{
+    display: flex;
+    background-color: #fff;
+}
+
+
+.btn{
+    text-align: center;
+    margin: 20rpx 30rpx;
+    height: 88rpx;
+    border-radius: 10rpx;
+    background-color: #fbfafc;
+    border:1rpx solid #ddd;
+    line-height: 88rpx;
+    color: #333;
+    font-size: 36rpx;
+}
+.btn.btn-primary{
+    color: #fff;
+    background-color: #6288d5;
+}
+.btn:active{
+    opacity: .6;
+}

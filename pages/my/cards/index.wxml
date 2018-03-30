@@ -1,0 +1,287 @@
+
+<!-- <view class="page"> -->
+    <!--顶部搜索-->
+    <!-- <view class="search">
+        <view class="btn_left"></view>
+        <navigator hover-class="none" url='/pages/customer/search/search'>
+            <view class='btn_search'>
+                <view>
+                    <i class="iconfont icon-search"></i>
+                    <label>搜索</label>
+                </view>
+            </view>
+        </navigator>
+
+        <view class='btn_dropdown'>
+            <view class='btn_icon' bindtap="onCaoZuoDorpdown">
+                <i class="iconfont icon-caozuo"></i>
+            </view>
+            <view wx:if="{{cao_zuo}}" class='btn_dropdown_list'>
+                <navigator url="/pages/my/cards/select/select?type=sms">
+                    <i class="iconfont icon-icon-sms"></i>
+                    <label>群发短信</label>
+                </navigator> -->
+                <!-- <navigator url="#">
+                <i class="iconfont icon-email"></i>
+                <label>群发邮件</label>
+              </navigator> -->
+                <!-- <navigator url="/pages/my/cards/select/select?type=group">
+                    <i class="iconfont icon-qunicon"></i>
+                    <label>设置标签</label>
+                </navigator> -->
+                <!-- <navigator url="#">
+                <i class="iconfont icon-delete"></i>
+                <label>删除</label>
+              </navigator> -->
+                <!-- <navigator url="/pages/my/cards/select/select?type=log">
+                    <i class="iconfont icon-rizhi"></i>
+                    <label>添加日志</label>
+                </navigator>
+            </view>
+        </view>
+    </view> -->
+
+    <!--内容  -->
+    <!-- <view class="page-body">
+        <block>
+            <view class="group">
+                <view class="group-title" data-index="0" bindtap="onGroupPull">
+                    <view class="group-title-body">无标签</view>
+                    <view class="group-title-foot">
+                        <view>2</view>
+                        <view class="group-title-bottom group-title-top">
+                            <i class="iconfont icon-xiala"></i>
+                        </view>
+                    </view>
+                </view>
+                <view class="group-list">
+                    <view class="order-list">
+                        <block>
+                            <navigator class="order-item" url="/pages/my/cards/detail/detail">
+                                <view class="item-body">
+                                    <view class="item-name">
+                                        <text>达达</text>
+                                        <text>经理</text>
+                                    </view>
+                                    <view class="item-company">上海联展软件技术有限公司</view>
+                                </view>
+                                <view class="item-foot">
+                                    <view class='icon-round active'>
+                                        <view>
+                                            <i class="iconfont icon-duanxin"></i>
+                                        </view>
+                                    </view>
+                                    <view class='icon-round'>
+                                        <view>
+                                            <i class="iconfont icon-dianhua2"></i>
+                                        </view>
+                                    </view>
+                                    <view class='icon-round '>
+                                        <view>
+                                            <i class="iconfont icon-yuyue1"></i>
+                                        </view>
+                                    </view>
+                                </view>
+                            </navigator>
+                            <navigator class="order-item" url="/pages/customer/details/details?id={{item.RecordId}}">
+                                <view class="item-body">
+                                    <view class="item-name">
+                                        <text>达达</text>
+                                        <text>经理</text>
+                                    </view>
+                                    <view class="item-company">上海联展软件技术有限公司</view>
+                                </view>
+                                <view class="item-foot">
+                                    <view class='icon-round active'>
+                                        <view>
+                                            <i class="iconfont icon-duanxin"></i>
+                                        </view>
+                                    </view>
+                                    <view class='icon-round active'>
+                                        <view>
+                                            <i class="iconfont icon-dianhua2"></i>
+                                        </view>
+                                    </view>
+                                    <view class='icon-round '>
+                                        <view>
+                                            <i class="iconfont icon-yuyue1"></i>
+                                        </view>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="group">
+                <view class="group-title" data-index="0" bindtap="onGroupPull">
+                    <view class="group-title-body">重要客户</view>
+                    <view class="group-title-foot">
+                        <view>2</view>
+                        <view class="group-title-bottom">
+                            <i class="iconfont icon-xiala"></i>
+                        </view>
+                    </view>
+                </view>
+                <view class="group-list" wx:if="{{false}}">
+                    <view class="order-list">
+                        <block>
+                            <navigator class="order-item" url="/pages/my/cards/detail/detail">
+                                <view class="item-body">
+                                    <view class="item-name">
+                                        <text>达达</text>
+                                        <text>经理</text>
+                                    </view>
+                                    <view class="item-company">上海联展软件技术有限公司</view>
+                                </view>
+                                <view class="item-foot">
+                                    <view class='icon-round active'>
+                                        <view>
+                                            <i class="iconfont icon-duanxin"></i>
+                                        </view>
+                                    </view>
+                                    <view class='icon-round'>
+                                        <view>
+                                            <i class="iconfont icon-dianhua2"></i>
+                                        </view>
+                                    </view>
+                                    <view class='icon-round '>
+                                        <view>
+                                            <i class="iconfont icon-yuyue1"></i>
+                                        </view>
+                                    </view>
+                                </view>
+                            </navigator>
+                            <navigator class="order-item" url="/pages/my/cards/detail/detail">
+                                <view class="item-body">
+                                    <view class="item-name">
+                                        <text>达达</text>
+                                        <text>经理</text>
+                                    </view>
+                                    <view class="item-company">上海联展软件技术有限公司</view>
+                                </view>
+                                <view class="item-foot">
+                                    <view class='icon-round active'>
+                                        <view>
+                                            <i class="iconfont icon-duanxin"></i>
+                                        </view>
+                                    </view>
+                                    <view class='icon-round active'>
+                                        <view>
+                                            <i class="iconfont icon-dianhua2"></i>
+                                        </view>
+                                    </view>
+                                    <view class='icon-round '>
+                                        <view>
+                                            <i class="iconfont icon-yuyue1"></i>
+                                        </view>
+                                    </view>
+                                </view>
+                            </navigator>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+ </view>  -->
+
+ <view class="page">
+  <!--顶部搜索-->
+  <view class="search">
+    <view class="btn_left"></view>
+    <navigator hover-class="none" url='/pages/my/cards/search/search'>
+      <view class='btn_search'>
+        <view>
+          <i class="iconfont icon-search"></i>
+          <label>搜索</label>
+        </view>
+      </view>
+    </navigator>
+
+    <view class='btn_dropdown'>
+      <view class='btn_icon' bindtap="onCaoZuoDorpdown">
+        <i class="iconfont icon-caozuo"></i>
+      </view>
+      <view wx:if="{{cao_zuo}}" class='btn_dropdown_list'>
+        <navigator url="/pages/my/cards/select/send-sms/send-sms?type=sms">
+          <i class="iconfont icon-icon-sms"></i>
+          <label>群发短信</label>
+        </navigator>
+        <!-- <navigator url="#">
+          <i class="iconfont icon-email"></i>
+          <label>群发邮件</label>
+        </navigator> -->
+        <navigator url="/pages/other/group/edit/edit">
+          <i class="iconfont icon-qunicon"></i>
+          <label>添加标签</label>
+        </navigator>
+        <!-- <navigator url="#">
+          <i class="iconfont icon-delete"></i>
+          <label>删除</label>
+        </navigator> -->
+        <navigator url="/pages/my/cards/select/select?type=log">
+          <i class="iconfont icon-rizhi"></i>
+          <label>添加日志</label>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <!--内容  -->
+  <view class="page-body">
+    <block wx:for="{{groups}}" wx:for-item="group">
+      <view class="group">
+        <view class="group-title" data-index="{{index}}" bindtap="onGroupPull">
+          <view class="group-title-body">{{group.name}}</view>
+          <view class="group-title-foot">
+            <view>{{group.list.length}}</view>
+            <view class="group-title-bottom {{group_index==index?'group-title-top':''}}">
+              <i class="iconfont icon-xiala"></i>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{group_index==index}}" class="group-list">
+          <view wx:if="{{group.list.length>0}}" class="order-list">
+            <block wx:for="{{group.list}}">
+              <navigator class="order-item" url="/pages/my/cards/detail/detail?id={{item.RecordId}}&group={{group.name}}">
+                <view class="item-body">
+                  <view class="item-name">
+                    <text>{{item.Name||''}}</text>
+                    <text>{{item.Job[0].value}}</text>
+                  </view>
+                  <view class="item-company">{{item.Company[0].value||''}}</view>
+                </view>
+                <view class="item-foot">
+                   <view class='icon-round {{item.HaveSendMsg?"active":""}}'> 
+                    <view>
+                      <i class="iconfont icon-duanxin"></i>
+                    </view>
+                   </view> 
+                   <view class='icon-round {{item.HaveCalled?"active":""}}'> 
+                    <view>
+                      <i class="iconfont icon-dianhua2"></i>
+                    </view>
+                   </view> 
+                   <view class='icon-round {{item.HaveSendEmail?"active":""}}'> 
+                    <view>
+                      <i class="iconfont icon-youxiang"></i>
+                    </view>
+                   </view> 
+                </view>
+              </navigator>
+            </block>
+          </view>
+        </view>
+      </view>
+
+    </block>
+  </view>
+</view>
+
+<view>
+  <!-- 以下是对一个自定义组件的引用 -->
+  <invite contact="哈哈哈" show="" bindInviteOk="InviteOk" type="3" addrs="{{[{name:'name1',value:'zxx'},{name:'name1',value:'valxzue1'},{name:'name1',value:'sdad'},{name:'name1',value:'ww'},{name:'name1',value:'123'},{name:'name2',value:'valwewue1',checked:true}]}}"
+    company="asdsafdsadasdas"></invite>
+</view>
+

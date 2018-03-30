@@ -1,0 +1,147 @@
+@import '/styles/search.wxss';
+  
+  .page-body {
+    padding-top: 96rpx;
+  }
+  
+  .list {
+    background: #fff;
+    border: 1rpx solid #e6e6e6;
+  }
+  
+  .fitler-count {
+    color: #b2b2b2;
+    font-size: 24rpx;
+    padding: 15rpx 30rpx;
+  }
+  
+  /**=====================客户分组======================**/
+  
+  .group {
+    background: #fff;
+  }
+  
+  .group-title {
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+    height: 90rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    border-bottom: 1rpx solid #efeff4;
+  }
+  
+  .group-title:hover {
+    opacity: 0.6;
+  }
+  
+  .group-title-head {
+  }
+  
+  .group-title-body {
+    flex: 1;
+  }
+  
+  .group-title-foot {
+    display: flex;
+    color: #a9a9a9;
+  }
+  
+  .group-title-foot view:first-child {
+    padding-right: 20rpx;
+  }
+  
+  .group-title-foot i {
+    font-size: 34rpx;
+    font-weight: bold;
+  }
+  
+  .group-title-bottom {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+  }
+  
+  .group-title-top {
+    transform: rotate(180deg);
+  }
+  
+  .group-list {
+  }
+  
+  .group-order {
+    font-size: 28rpx;
+    color: #6288d5;
+    padding: 26rpx 26rpx 6rpx 30rpx;
+  }
+  
+  .order-list {
+  }
+  
+  .order-item {
+    display: flex;
+    border-bottom: 1rpx solid #efeff4;
+    padding-bottom: 26rpx;
+    padding-right: 30rpx;
+    padding-left: 30rpx;
+  }
+  
+  .group .order-list:last-child {
+    border-bottom: 0;
+    margin-bottom: 20rpx;
+  }
+  
+  .item-head {
+    padding-top: 30rpx;
+    padding-right: 20rpx;
+  }
+  
+  .item-body {
+    flex: 1;
+    font-size: 28rpx;
+    color: #b2b2b2;
+  }
+  
+  .item-name {
+    padding-top: 32rpx;
+    padding-bottom: 26rpx;
+  }
+  
+  .item-name text:first-child {
+    font-size: 34rpx;
+    color: #000;
+    padding-right: 16rpx;
+  }
+  
+  .item-name text:last-child {
+  }
+  
+  .item-company {
+  }
+  
+  .item-foot {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+  }
+  
+  .item-foot .active {
+    color: #6288d5;
+  }
+  
+  .icon-round {
+    margin-right: 12rpx;
+    color: #b2b2b2;
+  }
+  
+  .icon-round view {
+    width: 100%;
+  }
+  
+  .icon-round i {
+    font-size: 44rpx;
+  }
+  
+  .icon-active {
+    color: #6288d5;
+  }
+  

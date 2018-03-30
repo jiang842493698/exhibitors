@@ -1,0 +1,138 @@
+<view class='page'>
+  <view class='page-head'>
+    <view class='info' style=''>
+       <view class='info-logo'>
+        <!-- bindtap='photograph' -->
+        <image src='{{image}}'></image>
+      </view>
+       <view class='info-company_name'>{{info.CompanyName}}</view> 
+      <view class='info-addr'>
+        <label>{{info.BoothNo}}</label>
+        <label> | </label>
+        <label>{{info.City}}</label>
+      </view>
+      <view class='info-label'>
+        <label wx:if="{{info.Categories.length>0}}">{{info.Categories}}</label>
+      </view>
+      <view class='info-foot'>
+        <view class='info-btn'>
+          <view class='btn btn-primary' bindtap="onInviteTa" data-id='{{info.RecordId}}' data-Type='展商'>约TA</view>
+        </view>
+        <view class='info-collect collect'>
+          <!-- <i class="iconfont icon-collect"></i>
+          <label>收藏</label> -->
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class='page-body'>
+    <view class='product'>
+      <view class='p-head'>
+        <view class='p-title'>展品</view>
+        <navigator wx:if="{{productList.length>0}}" class='p-nav' url="/pages/exhibition/detail/product/product?id={{info.TenantId}}">
+          <i class="iconfont icon-arrow-right2"></i>
+        </navigator>
+      </view>
+      <view class='p-body'>
+        <view class='p-imgs'>
+          <navigator wx:for="{{productList}}" url="/pages/exhibition/detail/product/detailt/detail?index={{index}}&id={{info.TenantId}}" class='p-item'  wx:for-item="product">
+            <view class='p-img'>
+              <image src='{{product.PicList[0].PicPath}}'></image>
+            </view>
+            <view class='p-title'>{{product.ProductName}}</view>
+          </navigator>
+          <label class="p-font" wx:if="{{productList.length==0}}">暂无展品</label>
+        </view>
+      </view>
+    </view>
+    <view class='introduction'>
+      <view class='i-head'>
+        <view class='i-title'>简介</view>
+      </view>
+      
+      <view class='i-body {{isContentMore?"i-content-open":""}}'>
+
+        <view class='i-content'>
+          {{info.Introduction||'暂无简介'}}
+        </view>
+
+        <view wx:if="{{info.Introduction.length>80}}" class='i-more' style='{{isContentMore?"transform: rotate(180deg);":""}}' bindtap="onContentMore">
+          <i class="iconfont icon-xiala"></i>
+        </view>
+      </view>
+    </view>
+    <view class='visitor'>
+      <view class='v-head'>
+        <view class='v-title'>
+          <label>访客</label>
+          <label>（共{{info.PVNumber||0}}人）</label>
+        </view>
+      </view>
+      <view class='v-body' >
+        <view class='v-image' wx:for="{{visitInfo}}" wx:for-index="index">
+          <view wx:if="{{index < 10}}">
+          <image src='{{item.VisitorId.Logo||"/assets/images/other/not_logo.png"}}'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='tab'>
+      <view class='tab-h'>
+        <view bindtap='onTabSwitch' class='tab-item {{tab_index=="log"?"selected":""}}' data-index='log'>
+          <label>日志</label>
+        </view>
+        <view bindtap='onTabSwitch' class='tab-item {{tab_index=="img"?"selected":"/assets/images/other/not_logo.png"}}' data-index='img'>
+          <label>用户画像</label>
+        </view>
+      </view>
+      <view class='tab-b'>
+        <view wx:if="{{tab_index=='log'}}" class='tab-log'>
+          <view class='log'>
+            <view class='log-add line'>
+              <view class='log-add-round'></view>
+              <view class='log-add-btn' bindtap='onAddLinkLog'  >
+                <i class="iconfont icon-tianjia"></i>
+                <label>添加</label>
+              </view>
+            </view>
+            <view wx:for="{{logs}}" class='log-item line'>
+              <view class='log-content'>
+                <view class='log-time'>{{item.CreatedAt}}</view>
+                  <view wx:if="{{item.level == 0 }}" >
+                    <view class='log-msg0' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+                  <view wx:if="{{item.level == 1 }}" >
+                    <view class='log-msg1' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+                  <view wx:if="{{item.level == 2 }}" >
+                    <view class='log-msg2' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+                  <view wx:if="{{item.level == 3 }}" >
+                    <view class='log-msg3' bindtap='onExhibitorLog' data-index="{{index}}">
+                        {{item.info}}
+                    </view>
+                  </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- <view wx:if="{{tab_index=='img'}}" class='tab-img'>
+
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <view class='page-foot'>
+    Copyright © 2017 huizhanren.com All Rights Reserved
+  </view>
+</view>
+<!-- <invite contact="{{invite_ta.contact}}" show="{{invite_ta.show}}" bindInviteOk="InviteOk" type="{{invite_ta.type}}" company="{{invite_ta.company}}"
+  job="{{invite_ta.job}}" addrs="{{invite_ta.addrs}}" msg="{{invite_ta.msg}}" bindaddrsRadio="addrsRadioChange"></invite> -->
+  <invite data="{{invite.data}}" wx:if="{{invite.isShow}}" bindcancel="inviteCancel" bindconfirm="inviteConfirm"></invite>

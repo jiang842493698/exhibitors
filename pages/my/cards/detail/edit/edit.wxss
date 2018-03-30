@@ -1,0 +1,135 @@
+.cell-body {
+    display: block;
+    padding: 0;
+    background-color: #fff;
+}
+
+.cell {
+    background-color: #fff;
+    margin-bottom: 10rpx;
+    position: relative;
+}
+
+.cord-image {
+    height: 500rpx;
+}
+
+.cord-image image {
+    width: 100%;
+}
+
+.btn-image {
+    position: absolute;
+    top: 30rpx;
+    right: 30rpx;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 30rpx;
+    font-size: 28rpx;
+    padding: 0 20rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.cell .cell-head {
+    padding: 0 30rpx;
+    padding-top: 30rpx;
+    color: #6288d5;
+    display: flex;
+    font-size: 28rpx;
+}
+
+.cell .cell-title {
+    flex: 1;
+}
+
+.cell .cell-add i {
+    font-size: 28rpx;
+}
+
+.cell .cell-item {
+    display: flex;
+    padding: 17rpx 30rpx;
+    font-size: 32rpx;
+    color: #333;
+    background-color: #fff;
+}
+
+.cell .cell-item input {
+    border-bottom: 2rpx solid #ddd;
+    height: 86rpx;
+    padding: 0 10rpx;
+    transition: all 0.4s ease-in-out;
+}
+
+.cell .cell-item input:hover {
+    border-bottom: 2rpx solid #6288d5;
+}
+
+.edit-item-body {
+    flex: 1;
+    padding: 0 10rpx;
+}
+
+.edit-item-foot i {
+    font-size: 32rpx;
+    color: #bbb;
+}
+
+.edit-item-head {}
+
+.edit-select {
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 190rpx;
+    height: 86rpx;
+    border-bottom: 2rpx solid #ddd;
+    text-align: center;
+    margin-right: 10rpx;
+    padding: 0 10rpx;
+}
+
+.edit-select::before {
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+    content: ' ';
+    width: 0;
+    height: 0;
+    border-bottom: 12rpx solid #ddd;
+    border-left: 12rpx solid transparent;
+    right: 0;
+    bottom: 0;
+}
+
+.edit-select:hover {
+    border-bottom: 2rpx solid #6288d5;
+}
+
+.edit-select:hover::before {
+    border-bottom: 12rpx solid #6288d5;
+}
+
+.edit-item-foot {
+    display: flex;
+    align-items: center;
+    height: 86rpx;
+}
+
+.page-foot {
+    margin: 50rpx 0;
+}
+
+.groups {
+    font-size: 28rpx;
+}
+
+.groups view {
+    margin: 5rpx;
+    background: #6288d5;
+    color: #fff;
+    border-radius: 4rpx;
+    padding: 10rpx;
+    float: left;
+}

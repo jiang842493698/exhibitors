@@ -1,0 +1,86 @@
+
+
+
+/**=====================cell======================**/
+
+.cell{
+    position: relative;
+    padding-top: 14rpx;
+    line-height: 2.7;
+    font-size: 34rpx;
+
+}
+.cell-title{
+    padding-left:32rpx;
+    font-size: 28rpx;
+    color: #888;
+}
+.cell-list{
+    background-color: #fff;
+    border-top: 1rpx solid #e5e5e5;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.cell-item{
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1rpx solid #e5e5e5;
+    margin-left: 34rpx;
+    padding-right: 30rpx;background-color: #fff;
+}
+
+.cell-header{
+    padding-right:54rpx; 
+}
+.cell-header i{
+    color: #6288d5;
+}
+.cell-body{
+    flex: 1;
+}
+.cell-footer{
+    text-align: right;
+    color: #999;
+}
+/*
+.cell-list view:last-child{
+    border:0;
+}
+*/
+/* 带跳转的cell*/
+.cell-nav-hover{
+    opacity: 0.3;
+    background: #f0f0f0
+}
+.cell-list view:last-child{
+    border:0;
+}
+.panle{
+    padding: 28rpx 48rpx;
+
+}
+.panle-title{
+    font-size: 28rpx;
+    color: #999;
+    padding: 22rpx 0;
+}
+.panle-list{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.panle-list view{
+    font-size:28rpx;
+    background:#fff;
+    border-radius:26rpx;
+    box-shadow:0 0 5rpx 0 #999;
+    padding:0 22rpx;
+    height:52rpx;
+    margin:10rpx;
+    line-height:200%;
+}
+.page-footer{
+    padding: 40rpx 0;
+}

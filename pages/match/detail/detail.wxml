@@ -1,0 +1,99 @@
+<view class='page'>
+  <view class='page-head'>
+    <navigator class='me-panle' style=''>
+      <view class='me-info'>
+        <view class='me-info-top'>
+          <view class='info-top-left'>
+            <view class="info-username">
+              <text>{{visitors.Name}}</text>
+              <text>{{visitors.Job}}</text>
+            </view>
+            <view class='info-name'>
+              <text>{{visitors.City}}</text>
+              <text>{{visitors.CompanyName}}</text>
+            </view>
+            <view class='info-type'>
+              <label>{{visitors.Industry==null?"暂无":visitors.Industry}}</label>
+            </view>
+          </view>
+          <view class='info-top-right'>
+            <view class='info-logo'>
+              <image src='{{visitors.Image}}'></image>
+            </view>
+          </view>
+        </view>
+        <view class='me-info-bottom'>
+          <view class='info-bottom-left'>
+            <label>简介：</label>
+          </view>
+          <view class='info-bottom-right'>
+            <label>{{visitors.Introduction==null?"无":visitors.Introduction}}</label>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class='page-body'>
+    <view class='information'>
+      <view class='i-head'>
+        <view class='i-title'>详细信息</view>
+      </view>
+      <view class='i-body'>
+        <view class="cell-item">
+          <view class="cell-body">
+            <view class="cell-left" bindtap='OnCall'>
+              <view class="cell-icon">
+                <i class="iconfont icon-dianhua"></i>
+              </view>
+            </view>
+            <view class="cell-right">
+              <view class="i-value" bindtap='OnCall'>{{visitors.Mob}}</view>
+              <view class="i-label">手机</view>
+            </view>
+            <view class="msg" bindtap='onSendSms'>
+              <i class="iconfont icon-icon-sms"></i>
+            </view>
+          </view>
+        </view>
+        <view class="cell-item">
+          <view class="cell-body">
+            <view class="cell-left">
+              <view class="cell-icon">
+                <i class="iconfont icon-email"></i>
+              </view>
+            </view>
+            <view class="cell-right">
+              <view class="i-value">{{visitors.Email==""||visitors.Email==null?"无记录":visitors.Email}}</view>
+              <view class="i-label">邮箱</view>
+            </view>
+          </view>
+        </view>
+        <view class="cell-item">
+          <view class="cell-body">
+            <view class="cell-left">
+              <view class="cell-icon">
+                <i class="iconfont icon-dizhi"></i>
+              </view>
+            </view>
+            <view class="cell-right">
+              <view class="i-value">{{visitors.CompAdd==""||visitors.CompAdd==null?"无记录":visitors.CompAdd}}</view>
+              <view class="i-label">地址</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='i-more' bindtap="onMore">
+        <i class="iconfont icon-xiala"></i>
+      </view>
+    </view>
+
+    <!-- <navigator url="/pages/exhibition/detail/detail" class="cell-item btn-cell">
+      <view class="cell-body">
+        <view class="cell-left">展商主页</view>
+        <view class="cell-right">
+          <i class="iconfont icon-arrow-right"></i>
+        </view>
+      </view>
+    </navigator> -->
+  </view>
+</view>

@@ -1,0 +1,124 @@
+<view class="page">
+    <view class="page-header">
+        <view class="filter">
+            <view wx:for="{{date}}" class="filter-item {{initialTime==item?'selected':''}}"  bindtap='onDate' data-date='{{item}}'>
+                <text>{{item}}</text>
+            </view>
+            <!-- <view class="filter-item selected">
+                <text>01/22</text>
+            </view>
+            <view class="filter-item">
+                <text>01/23</text>
+            </view>
+            <view class="filter-item">
+                <text>01/24</text>
+            </view>
+            <view class="filter-item">
+                <text>01/25</text>
+            </view> -->
+        </view>
+    </view>
+    <view class="page-body">
+        <view class="schedule">
+            <view class="morning" >
+                <view class="title">上午</view>
+                <view class="time" >
+                    <view class="tiem-row">
+                         <view wx:for="{{dateTimes}}" wx:if="{{item.type=='morning'}}"  bindtap='suoDing' data-startTime='{{item.StartTime}}' data-endTime='{{item.EndTime}}' data-status='{{item.State}}' data-name='{{item.name}}' class="time-item {{item.State==0?'':'lock'}}" >
+                            <view class="time-content">
+                                <view>{{item.start}}</view>
+                                <view>~</view>
+                                <view>{{item.end}}</view>
+
+                                <!-- <view>09:00</view>
+                                <view>~</view>
+                                <view>09:30</view> -->
+                              </view>
+                         </view>  
+                         <!-- <view class="time-item">
+                            <view class="time-content">
+                                <view>10:00</view>
+                                <view>~</view>
+                                <view>10:30</view>
+                            </view>
+                        </view>
+                        <view class="time-item">
+                            <view class="time-content">
+                                <view>11:00</view>
+                                <view>~</view>
+                                <view>11:30</view>
+                            </view>
+                        </view>
+                        <view class="time-item">
+                            <view class="time-content">
+                                <view>11:00</view>
+                                <view>~</view>
+                                <view>11:30</view>
+                              </view>
+                            
+                        </view>
+                        <view class="time-item">
+                            <view class="time-content">
+                                <view>11:00</view>
+                                <view>~</view>
+                                <view>11:30</view>
+                            </view>
+                        </view>
+                        <view class="time-item">
+                            <view class="time-content">
+                                <view>12:00</view>
+                                <view>~</view>
+                                <view>12:30</view>
+                            </view>
+                        </view>   -->
+                    </view>
+                </view>
+            </view>
+            <view class="afternoon">
+                <view class="title">下午</view>
+                <view class="time" >
+                    <view class="tiem-row">
+                        <view wx:for="{{dateTimes}}" wx:if="{{item.type=='afternoon'}}" bindtap='suoDing' data-name='{{item.name}}' data-status='{{item.State}}'  class="time-item {{item.State==0?'':'lock'}}">
+                            <view class="time-content">
+                                <view>{{item.start}}</view>
+                                <view>~</view>
+                                <view>{{item.end}}</view>
+                            </view>
+                        </view>
+                        
+                        <!-- <view class="time-item">
+                            <view class="time-content">
+                                <view>14:00</view>
+                                <view>~</view>
+                                <view>14:30</view>
+                            </view>
+                        </view>
+                        <view class="time-item">
+                            <view class="time-content">
+                                <view>15:00</view>
+                                <view>~</view>
+                                <view>15:30</view>
+                            </view>
+                        </view>
+                        <view class="time-item">
+                            <view class="time-content">
+                                <view>16:00</view>
+                                <view>~</view>
+                                <view>16:30</view>
+                            </view>
+                        </view> -->
+                    </view>
+                    <!-- <view class="tiem-row">
+                        <view class="time-item">
+                            <view class="time-content">
+                                <view>17:00</view>
+                                <view>~</view>
+                                <view>17:30</view>
+                            </view>
+                        </view>
+                    </view> -->
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

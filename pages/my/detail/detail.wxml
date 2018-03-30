@@ -1,0 +1,102 @@
+
+<view class='cell'>
+  <!-- <view class='cell-group'>
+    <view class='cell-item'>
+      <view class='cell-item-h'>LOGO</view>
+      <view class='cell-item-b'></view>
+      <view class='cell-item-f'>
+        <view>
+          
+        </view>
+        <view>
+          <i class="iconfont icon-arrow-right"></i>
+        </view>
+      </view>
+    </view>
+
+  </view> -->
+  <view class='cell-head'>
+    <view class='cell-head-logo'>
+      <image src='{{images}}' class='logo' bindtap='photograph'></image>
+      <view>
+          <label>{{result.Name}}</label>
+      </view>
+    </view>
+  </view>
+  <view class='cell-group'>
+    <view class='cell-item'>
+      <view class='cell-item-h'>姓名</view>
+      <view class='cell-item-b'>
+        <input type='text' value='{{result.Name}}' bindinput="onName"></input>
+      </view>
+    </view>
+    <view class='cell-item'>
+      <view class='cell-item-h'>手机</view>
+      <view class='cell-item-b'>
+        <label><input type='text' value='{{result.Phone}}' bindinput="onPhone"></input></label>
+        <!-- <label class='cell-item-b-a'>更换手机号</label> -->
+      </view>
+    </view>
+  </view>
+  <view class='cell-group'>
+    <view class='cell-item'>
+      <view class='cell-item-h'>公司</view>
+      <view class='cell-item-c'>
+        <!-- <input type='text' value='上海联展软件有限公司'></input> -->
+        {{result.CompanyName}}
+      </view>
+    </view>
+    <view class='cell-item'>
+      <view class='cell-item-h'>职位</view>
+      <view class='cell-item-b'>
+        <input type='text' value='{{result.Job}}' bindinput="onJob"></input>
+      </view>
+    </view>
+    <!-- <view class='cell-item' bindtap='onIndustry'>
+      <view class='cell-item-h'>行业</view>
+      <view class='cell-item-b'>
+        互联网
+      </view>
+      <view class='cell-item-f'>
+        <i class="iconfont icon-arrow-right"></i>
+      </view>
+    </view>
+    <view class='cell-item'bindtap='onNature'>
+      <view class='cell-item-h'>性质</view>
+      <view class='cell-item-b'>
+        私有
+      </view>
+      <view class='cell-item-f'>
+        <i class="iconfont icon-arrow-right"></i>
+      </view>
+    </view> -->
+    <view class='cell-item' bindtap='onCategory'>
+      <view class='cell-item-h'>类别</view>
+      <view class='cell-item-c'>
+        {{Exhibitior.Categories}}
+      </view>
+      <!-- <view class='cell-item-f'>
+        <i class="iconfont icon-arrow-right"></i>
+      </view> -->
+    </view>
+    <view class='cell-item'bindtap='onCity'>
+      <view class='cell-item-h'>城市</view>
+      <view class='cell-item-c'>
+        {{Exhibitior.City}}
+      </view>
+      <!-- <view class='cell-item-f'>
+        <i class="iconfont icon-arrow-right"></i>
+      </view> -->
+    </view>
+  </view>
+  <view class='cell-group'>
+
+    <view class='cell-item'>
+      <textarea disabled="true" bindblur="onIntroductionBlur" maxlength='500' auto-height class='summary' placeholder='简介' value='{{Exhibitior.Industry}}' bindinput="onIntroduction"></textarea>
+    </view>
+  </view>
+
+  <view class='page-foot'>
+    <button class='btn btn-primary' bindtap="onSave">保存</button>
+  </view>
+</view>

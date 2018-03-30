@@ -1,0 +1,40 @@
+<view class="page">
+    <block wx:if="{{wxUserInfo}}">
+        <view class="page-header">
+            <view class="head">
+                <image src="{{wxUserInfo.avatarUrl}}" />
+            </view>
+            <view class="nick">{{wxUserInfo.nickName}}</view>
+            <!-- <view class="welcome">欢迎使用i-rdesk，请绑定手机号</view> -->
+        </view>
+
+        <view class="page-body">
+            <view class="cell">
+                <view class="cell-list">
+                  <view class="cell-item">
+                      <view class="cell-header">手机号</view>
+                      <view class="cell-body">
+                          <input value='' type="number" maxlength="99" cursor-spacing="100" placeholder="请输入手机号" name="mob" bindinput="onMobInput"/>
+                      </view>
+                  </view>
+                  <view class='cell-line'></view>
+                  <view class="cell-item">
+                      <view class="cell-header">验证码</view>
+                      <view class="cell-body">
+                          <input type="number" cursor-spacing="100"maxlength="10" placeholder="" name="code" bindinput="onCodeInput"/>
+                      </view>
+                      <view class="cell-footer">
+                          <button bindtap="onGetCode" loading="{{isload}}" disabled="{{isjy}}" class="btn-code {{isjy?'jy':''}}" hover-class="button-hover">{{btn_getCode}}</button>
+                      </view>
+                  </view>
+                </view>
+            </view>
+        </view>
+        <view class="page-footer">
+            <button class="btn btn-primary"  bindtap="onLogin" hover-class="button-hover">登录</button>
+        </view>
+    </block>
+    <view wx:if="{{isCancelAuth}}">
+        获取信息失败，请移除该小程序后重新添加，并允许得您的公开信息。
+    </view>
+</view>

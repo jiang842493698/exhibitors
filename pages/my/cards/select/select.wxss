@@ -1,0 +1,98 @@
+.page-header{
+    position: relative;
+}
+/*顶部全选*/
+.all{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    color: #fff;
+    background: #b5b9c0;
+    
+    z-index: 9999;
+}
+.all view:first-child{
+    flex: 1;
+    padding-left: 30rpx;
+}
+.all view:last-child{
+    text-align: right;
+    padding-right: 30rpx;
+}
+.page-body{
+    margin-top: 90rpx;
+     
+    padding-top:6rpx; 
+    padding-bottom:24rpx; 
+}
+.row{
+    background: #fff;
+    padding:22rpx 30rpx;
+    margin: 10rpx;
+}
+.row-title{
+    padding:16rpx 0;
+    font-size: 28rpx;
+    color:#6288d5;
+    border-bottom: 1rpx solid #6288d5;
+}
+.item-item{
+
+    align-items: center;
+/*    border-bottom: 1rpx solid #e6e6e6;*/
+    padding-top: 16rpx;
+}
+.row-body{
+    display: flex;
+    padding-top: 16rpx;
+    padding-bottom: 10rpx;
+    justify-content:space-between;
+}
+.row-size{
+  font-size: 28rpx;
+  color: #999;
+}
+.row-body view{
+    padding: 8rpx 0;
+}
+.row-body view:first-child{
+    font-size: 32rpx;
+    justify-content:flex-start;
+}
+.row-body view:last-child{
+    font-size: 28rpx;
+    color: #999;
+    justify-content:flex-end;
+}
+
+.page-footer{
+    padding-top: 40rpx;
+}
+.cell-arrow_right{
+    padding-left: 30rpx;
+}
+.cell-arrow_right i{
+    color: #999;
+    font-size: 34rpx;
+    transform: rotate(45deg); 
+    -webkit-transform:rotate(45deg);
+}
+.cell-list view:last-child{
+    border:0;
+}
+.foot-btn{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 20rpx 0;
+    background: #efeff4;
+}
+.foot-btn button{
+  margin: 0 30rpx;
+  background-color: #6288d5;
+  color: #fff;
+}

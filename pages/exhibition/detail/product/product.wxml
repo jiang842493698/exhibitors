@@ -1,0 +1,13 @@
+<view class='page'>
+    <view class='page-body'>
+        <view class='list'>
+            <navigator wx:for="{{productList}}" class='item' url="/pages/exhibition/detail/product/detail/detail?index={{index}}&id={{item.TenantId}}">
+                <image src='{{item.PicList[0].PicPath}}'></image>
+                <view class='title'>{{item.ProductName}}</view>
+            </navigator>
+        </view>
+    </view>
+    <view class='page-foot'>
+        <view class='btn btn-viewer' bindtap="onBreak">返回展商主页</view>
+    </view>
+</view>

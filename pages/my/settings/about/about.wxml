@@ -1,0 +1,20 @@
+<view class="page">
+    <view class="page-header">
+        <image src="/assets/images/icon/icon.png"></image>
+        <view class="version">V1.0.0204.1</view>
+    </view>
+    <view class="page-body">
+        <view>微信：联展会展人</view>
+        <view>邮箱：info@huizhanren.com </view>
+        <view>电话：021-6053 0405</view>
+    </view>
+    <view class="page-footer">
+        <view class="state">
+            <label>服务条款 </label>|
+            <label>隐私政策 </label>|
+            <label>负责声明</label>
+        </view>
+        <view class="company">上海联展软件技术有限公司</view>
+        <view class="copyright">Copyright © 2017 huizhanren.com All Rights Reserved</view>
+    </view>
+</view>

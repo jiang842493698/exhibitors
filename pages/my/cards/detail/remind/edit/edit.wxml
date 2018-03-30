@@ -1,0 +1,30 @@
+<view class="remind">
+        <view class="r-text">
+          <textarea auto-focus auto-height placeholder="请输入提醒内容" bindinput="onInput" value=""/>
+        </view>
+        <view class="r-datetime">
+          <view>提醒时间</view>
+          <view>
+              <view class="r-d-date">
+            <picker mode="date" bindchange="bindDateChange" value="{{date}}">
+               {{date}} 
+
+            </picker>
+          </view>
+          <view class="r-d-time">
+            <picker mode="time" bindchange="bindTimeChange" value="{{time}}">
+                    {{time}}
+            </picker>
+          </view>
+          <!--
+          <view>
+            <i class="iconfont icon-xiala"></i>
+          </view>
+          -->
+          </view>
+        </view>
+      
+        <view class="r-btn">
+          <button bindtap="onSave" class="btn btn-primary" hover-class="button-hover">保存</button>
+        </view>
+      </view>

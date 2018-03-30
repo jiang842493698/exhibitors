@@ -1,0 +1,265 @@
+<view class='page'>
+    <view class='page-head'>
+        <view class='tab'>
+            <view class='tab-list'>
+                <view bindtap='onTabSwitch' class='tab-item {{tab_index=="待处理"?"selected":""}}' data-index='待处理'>待处理</view>
+                <view bindtap='onTabSwitch' class='tab-item {{tab_index=="已完成"?"selected":""}}' data-index='已完成'>已完成</view>
+            </view>
+        </view>
+
+    </view>
+    <view class='page-body' wx:if="{{tab_index=='待处理'}}">
+        <view class='cell cell-state-unanswered' wx:for="{{InvitationInfoExhi}}">
+          <!-- <view>aaaaaaaa</view> -->
+            <view class='cell-item' wx:if='{{item.status=="0"}}'  data-State='{{item.State}}'  data-id='{{item.RecordId}}' data-feet='展商'>
+                <view class='info-body'>
+                    <view class='info-item'>
+                        <view class='info-label'>联系人</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.ReceiverChild[0].Name}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约地点</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.MeetingPlace==null?"无地点":item.MeetingPlace}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约时间</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'> {{item.MeetingTimeDate}}{{"    "+item.MeetingTimeStart}}{{" ~"+item.MeetingTimeEnd}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>约请状态</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name info-state'>{{STATE[item.State].text}}</view>
+                    </view>
+                </view>
+                <view class='info-btn'>
+                        <view wx:if="{{(item.State==1||item.State==3||item.State==7)}}" data-id="{{item.RecordId}}" class='info-btn-refuse'
+                            bindtap="onDelete">删除</view>
+                        <view wx:if="{{(item.State==2)}}" class='info-btn-cancel' data-id="{{item.RecordId}}" bindtap="onCancel">取消</view>
+                    </view>
+                <view class='{{item.status==0?"send":"collect"}}'>{{item.status=="0"?"发":"收"}}</view>
+            </view>
+            <view class='cell-item' wx:if='{{item.status=="1"}}' data-State='{{item.State}}'  data-id='{{item.RecordId}}' data-feet='展商'> 
+                <view class='info-body'>
+                    <view class='info-item'>
+                        <view class='info-label'>联系人</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.InitatorChild[0].Name}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约地点</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.MeetingPlace==null?"无地点":item.MeetingPlace}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约时间</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'> {{item.MeetingTimeDate}}{{"    "+item.MeetingTimeStart}}{{" ~"+item.MeetingTimeEnd}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>约请状态</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name info-state'>{{STATE[item.State].text}}</view>
+                    </view>
+                </view>
+                <view class='info-btn'>
+                        <view wx:if="{{(item.State==1||item.State==3||item.State==7)}}" data-id="{{item.RecordId}}" class='info-btn-refuse'
+                            bindtap="onDelete">删除</view>
+                        <view wx:if="{{(item.State==2)}}" class='info-btn-refuse' data-id="{{item.RecordId}}" bindtap="onReject">拒绝</view>
+                        <view wx:if="{{(item.State==2)}}" class='info-btn-accept' data-id="{{item.RecordId}}" bindtap="onAccept">接受</view>
+                    </view>
+                <view class='{{item.status==0?"send":"collect"}}'>{{item.status=="0"?"发":"收"}}</view>
+            </view>
+        </view>
+        <view class='cell cell-state-unanswered' wx:for="{{matchVInfo}}">
+        
+            <view class='cell-item' wx:if='{{item.status=="0"}}' data-State='{{item.State}}' data-id='{{item.RecordId}}' data-feet='观众'>
+                <view class='info-body'>
+                    <view class='info-item'>
+                        <view class='info-label'>联系人</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.VisitorInitator[0].Name || item.VisitorReceiver[0].Name}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约地点</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.MeetingPlace==null?"无地点":item.MeetingPlace}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约时间</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'> {{item.MeetingTimeDate}}{{"    "+item.MeetingTimeStart}}{{" ~"+item.MeetingTimeEnd}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>约请状态</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name info-state'>{{STATE[item.State].text}}</view>
+                    </view>
+                </view>
+                <view class='info-btn'>
+                        <view wx:if="{{(item.State==1||item.State==3||item.State==7)}}" data-id="{{item.RecordId}}" class='info-btn-refuse'
+                            bindtap="onDelete">删除</view>
+                        <view wx:if="{{(item.State==2)}}" class='info-btn-cancel' data-id="{{item.RecordId}}" bindtap="onCancel">取消</view>
+                    </view>
+                <view class='{{item.status==0?"send":"collect"}}'>{{item.status=="0"?"发":"收"}}</view>
+            </view>
+             <view class='cell-item' wx:if='{{item.status=="1"}}' data-State='{{item.State}}' data-id='{{item.RecordId}}' data-feet='观众'>
+                <view class='info-body'>
+                    <view class='info-item'>
+                        <view class='info-label'>联系人</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.InitatorChild[0].Name}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约地点</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.MeetingPlace==null?"无地点":item.MeetingPlace}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约时间</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'> {{item.MeetingTimeDate}}{{"    "+item.MeetingTimeStart}}{{" ~"+item.MeetingTimeEnd}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>约请状态</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name info-state'>{{STATE[item.State].text}}</view>
+                    </view>
+                </view>
+                <view class='info-btn'>
+                        <view wx:if="{{(item.State==1||item.State==3||item.State==7)}}" data-id="{{item.RecordId}}" class='info-btn-refuse'
+                            bindtap="onDelete">删除</view>
+                        <view wx:if="{{(item.State==2)}}" class='info-btn-refuse' data-id="{{item.RecordId}}" bindtap="onReject">拒绝</view>
+                        <view wx:if="{{(item.State==2)}}" class='info-btn-accept' data-id="{{item.RecordId}}" bindtap="onAccept">接受</view>
+                    </view>
+                <view class='{{item.status==0?"send":"collect"}}'>{{item.status=="0"?"发":"收"}}</view>
+            </view> 
+        </view>
+    </view>
+
+
+
+    <view class='page-body' wx:if="{{tab_index=='已完成'}}">
+        <view class='cell cell-state-agreed' wx:for="{{InvitationInfoExhi}}">
+            <navigator url="/pages/my/invite/exhibition/exhibition?id={{item.RecordId}}&feet=展商&status={{item.status}}&type={{item.Type}}">    
+            <view class='cell-item' wx:if='{{item.status=="0"}}'>
+                <view class='info-body'>
+                    <view class='info-item'>
+                        <view class='info-label'>联系人</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.ReceiverChild[0].Name}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约地点</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.MeetingPlace==null?"无地点":item.MeetingPlace}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约时间</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'> {{item.MeetingTimeDate}}{{"    "+item.MeetingTimeStart}}{{" ~"+item.MeetingTimeEnd}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>约请状态</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name info-state'>{{STATE[item.State].text}}</view>
+                    </view>
+                     <view class='info-btn'>
+                    </view> 
+                </view>
+                <view class='{{item.status==0?"send":"collect"}}'>{{item.status=="0"?"发":"收"}}</view>
+            </view>
+             <view class='cell-item' wx:if='{{item.status=="1"}}'>
+                <view class='info-body'>
+                    <view class='info-item'>
+                        <view class='info-label'>联系人</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.InitatorChild[0].Name}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约地点</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.MeetingPlace==null?"无地点":item.MeetingPlace}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约时间</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'> {{item.MeetingTimeDate}}{{"    "+item.MeetingTimeStart}}{{" ~"+item.MeetingTimeEnd}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>约请状态</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name info-state'>{{STATE[item.State].text}}</view>
+                    </view>
+                     <view class='info-btn'>
+                    </view> 
+                </view>
+                <view class='{{item.status==0?"send":"collect"}}'>{{item.status=="0"?"发":"收"}}</view>
+            </view> 
+           </navigator> 
+        </view>
+        <view class='cell cell-state-agreed' wx:for="{{matchVInfo}}">
+           <navigator url="/pages/my/invite/customer/customer?id={{item.RecordId}}&feet=观众&status={{item.status}}&type={{item.Type}}"> 
+            <view class='cell-item' wx:if='{{item.status=="0"}}'>
+                <view class='info-body'>
+                    <view class='info-item'>
+                        <view class='info-label'>联系人</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.VisitorInitator[0].Name || item.VisitorReceiver[0].Name}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约地点</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.MeetingPlace==null?"无地点":item.MeetingPlace}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约时间</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'> {{item.MeetingTimeDate}}{{"    "+item.MeetingTimeStart}}{{" ~"+item.MeetingTimeEnd}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>约请状态</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name info-state'>{{STATE[item.State].text}}</view>
+                    </view>
+                     <view class='info-btn'>
+                    </view> 
+                </view>
+                <view class='{{item.status==0?"send":"collect"}}'>{{item.status=="0"?"发":"收"}}</view>
+            </view>
+             <view class='cell-item' wx:if='{{item.status=="1"}}'>
+                <view class='info-body'>
+                    <view class='info-item'>
+                        <view class='info-label'>联系人</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.InitatorChild[0].Name}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约地点</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'>{{item.MeetingPlace==null?"无地点":item.MeetingPlace}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>预约时间</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name'> {{item.MeetingTimeDate}}{{"    "+item.MeetingTimeStart}}{{" ~"+item.MeetingTimeEnd}}</view>
+                    </view>
+                    <view class='info-item'>
+                        <view class='info-label'>约请状态</view>
+                        <view class='info-line'>|</view>
+                        <view class='info-name info-state'>{{STATE[item.State].text}}</view>
+                    </view>
+                     <view class='info-btn'>
+                    </view> 
+                </view>
+                <view class='{{item.status==0?"send":"collect"}}'>{{item.status=="0"?"发":"收"}}</view>
+            </view> 
+           </navigator> 
+        </view>
+        
+    </view>
+</view>
+<reject-invite wx:if="{{reject_invite.isShow}}" value="{{reject_invite.value}}" inviteId="{{reject_invite.id}}" list="{{reject_invite.list}}"feet="{{reject_invite.feet}}" bindcancel="reject_inviteCancel"
+    bindconfirm="reject_inviteConfirm" bind></reject-invite>

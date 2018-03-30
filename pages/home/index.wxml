@@ -1,0 +1,191 @@
+<view class="page">
+    <view class="page-body">
+         <view wx:for="{{message}}" class='aaa'> 
+           <view class="m-cell">
+              <navigator url="/pages/my/msg/sponsor/sponsor?id={{item.Type}}" hover-class="none" class="cell-item">
+                  <view class="cell-body">
+                      <view class="cell-left">
+                          <view class="cell-icon">
+                              <view class="cell-badge">
+                                  <image src='{{item.image}}'></image>
+                                  
+                                      <view wx:for="{{count}}" wx:for-item="it">
+                                        <view wx:if="{{item.Type==it.type}}">
+                                         <view class="badge-body" hidden='{{it.show}}'>
+                                          <text class="badge badge-orange" >{{it.count}}</text>
+                                        </view>
+                                      </view>
+                                      
+                                  </view>
+                              </view>
+                          </view>
+                      </view>
+                      <view class="cell-right">
+                          <view class="msg-title">
+                              <view class="title">{{item.Type==4?"主办":item.Type==2?"系统":item.Type==5?"约请":"活动"}}</view>
+                              <view class="date">{{item.time}}</view>
+                          </view>
+                          <view class="msg-content">
+                              {{item.Content}}
+                          </view>
+                      </view>
+                  </view>
+              </navigator>
+          </view> 
+         </view>
+         
+        <view wx:for="{{InvitationInfoExhi}}" wx:for-item="items">
+          <view class="m-cell"> 
+              <view class="cell-item">
+                  <view class="cell-body">
+                      <view class="cell-left">
+                          <view class="cell-icon">
+                              <image src='/assets/images/icon/msg/invite.png'></image>
+                          </view>
+                      </view>
+                      <view class="cell-right">
+                          <view class="msg-title">
+                              <view class="title">约请</view>
+                              <view class="date">{{items.time}}</view>
+                          </view>
+                          <view class="msg-contents">
+                              <text class="msg-strong">{{items.InvitationMsgContent}} </text>
+                          </view>
+                      </view>
+                  </view>
+                  <view class="cell-footer" wx:if="{{items.State<3}}">
+                      <view class="btn btn-cancel" bindtap='onCancel' data-item='{{items}}' data-feet='展商'>
+                          <text>拒绝</text>
+                      </view>
+                      <view class="btn btn-primary" bindtap="onAgree" data-bing='{{items.RecordId}}' data-feet='展商'>
+                          <text>同意</text>
+                      </view>
+                  </view>
+                  <view class="cell-footer" wx:else>
+                      <view class="btn btn-cancel" >
+                        <!-- <view>{{item.status}}</view> -->
+                          <view wx:if="{{items.State==3}}">已拒绝</view>
+                          <view wx:else >拒绝</view>
+                          <!-- <text>{{item.status==1?已拒绝:取消}}</text> -->
+                      </view>
+                      <view class="btn btn-primary">
+                          <view wx:if="{{items.State==4}}" >已同意</view>
+                          <view wx:else >同意</view>
+                          <!-- <text>同意</text> -->
+                      </view>
+                  </view>
+              </view>
+           
+          </view>
+        </view>
+        <view wx:for="{{matchVInfo}}" wx:for-item="items">
+        
+          <view class="m-cell"> 
+              <view class="cell-item">
+                  <view class="cell-body">
+                      <view class="cell-left">
+                          <view class="cell-icon">
+                              <image src='/assets/images/icon/msg/invite.png'></image>
+                          </view>
+                      </view>
+                      <view class="cell-right">
+                          <view class="msg-title">
+                              <view class="title">约请</view>
+                              <view class="date">{{items.time}}</view>
+                          </view>
+                          <view class="msg-contents">
+                              
+                              <text class="msg-strong">{{items.InvitationMsgContent}} </text>
+                          </view>
+                      </view>
+                  </view>
+                  <view class="cell-footer" wx:if="{{items.State<3}}">
+                      <view class="btn btn-cancel" bindtap='onCancel' data-item='{{items}}' data-feet='观众'>
+                          <text>拒绝</text>
+                      </view>
+                      <view class="btn btn-primary" bindtap="onAgree" data-bing='{{items.RecordId}}' data-feet='观众'>
+                          <text>同意</text>
+                      </view>
+                  </view>
+                  <view class="cell-footer" wx:else>
+                      <view class="btn btn-cancel" >
+                        <!-- <view>{{item.status}}</view> -->
+                          <view wx:if="{{items.State==3}}">已拒绝</view>
+                          <view wx:else >拒绝</view>
+                          <!-- <text>{{item.status==1?已拒绝:取消}}</text> -->
+                      </view>
+                      <view class="btn btn-primary">
+                          <view wx:if="{{items.State==4}}" >已同意</view>
+                          <view wx:else >同意</view>
+                          <!-- <text>同意</text> -->
+                      </view>
+                  </view>
+              </view>
+           
+          </view>
+          
+        </view>
+
+         <!-- <view class="m-cell"> 
+            <view class="cell-item">
+                <view class="cell-body">
+                    <view class="cell-left">
+                        <view class="cell-icon">
+                            <image src='/assets/images/icon/msg/invite.png'></image>
+                        </view>
+                    </view>
+                    <view class="cell-right">
+                        <view class="msg-title">
+                            <view class="title">约请</view>
+                            <view class="date">2小时前</view>
+                        </view>
+                        <view class="msg-content">
+                            收到
+                            <text class="msg-strong">张三 经理</text>（上海联展软件技术有限公司）的 约请，TA希望在展位（N-101）会面，请同意或 拒绝。
+                        </view>
+                    </view>
+                </view>
+                <view class="cell-footer">
+                    <view class="btn btn-cancel" bindtap="onCancel">
+                        <text>取消</text>
+                    </view>
+                    <view class="btn btn-primary" bindtap="onAgree">
+                        <text>同意</text>
+                    </view>
+                </view>
+            </view>
+        </view> -->
+        <!-- <view class="m-cell">
+            <view class="cell-item">
+                <view class="cell-body">
+                    <view class="cell-left">
+                        <view class="cell-icon">
+                            <image src='/assets/images/icon/msg/invite.png'></image>
+                        </view>
+                    </view>
+                    <view class="cell-right">
+                        <view class="msg-title">
+                            <view class="title">约请</view>
+                            <view class="date">2小时前</view>
+                        </view>
+                        <view class="msg-content">
+                            收到
+                            <text class="msg-strong">张三 经理</text>（上海联展软件技术有限公司）的 约请，TA希望在展位（N-101）会面，请同意或 拒绝。
+                        </view>
+                    </view>
+                </view>
+                <view class="cell-footer">
+                    <view class="btn btn-cancel">
+                        <text>取消</text>
+                    </view>
+                    <view class="btn btn-primary">
+                        <text>同意</text>
+                    </view>
+                </view>
+            </view>
+        </view>  -->
+    </view>
+</view>
+
+ <reject-invite wx:if="{{reject_invite.isShow}}" value="{{reject_invite.value}}" inviteId="{{reject_invite.id}}" feet="{{reject_invite.feet}}" list="{{reject_invite.list}}" bindcancel="reject_inviteCancel"
+    bindconfirm="reject_inviteConfirm" bind></reject-invite> 

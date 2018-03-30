@@ -1,0 +1,47 @@
+<view class="page">
+  <view class="page-header"></view>
+  <view class="page-body">
+    <view class="panle">
+      <view class="panle-head">
+        <view class="panle-title">选择标签</view>
+        <view class="panle-add">
+          <navigator url="/pages/other/group/edit/edit" hover-class="none">
+            <i class="iconfont icon-tianjia"></i>
+            <text>添加标签</text>
+          </navigator>
+        </view>
+      </view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{label}}">
+          <radio value="{{item.RecordId}}" checked="{{item.checked}}" />{{item.Name}}
+        </label>
+      </radio-group>
+      <!-- <view class="panle-body">
+        <block>
+          <view class="activate" data-index="{{index}}" data-checked="{{item.checked}}" bindtap="onSelected">重要客户</view>
+          <view class="" data-index="{{index}}" data-checked="{{item.checked}}" bindtap="onSelected">VIP</view>
+        </block>
+      </view>  -->
+    </view>
+    <view class="panle2">
+      <view class="panle2-title">您可能会用到的标签</view>
+      <view class="panle2-body">
+        <view class="panle2-list">
+
+          <view bindtap="onChoose">VIP</view>
+          <view>客户</view>
+          <view>供应商</view>
+          <view>合作伙伴</view>
+          <view>同行</view>
+
+          <block wx:for="{{tjList}}">
+            <view bindtap="onChoose" data-name="{{item.Name}}">{{item.Name}}</view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page-footer">
+    <button class="btn btn-primary" bindtap="onSave">保存</button>
+  </view>
+</view>

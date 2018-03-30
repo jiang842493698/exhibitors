@@ -1,0 +1,63 @@
+.page-body {
+    margin: 30rpx;
+    background-color: #fff;
+}
+
+.log {
+    padding: 50rpx 20rpx;
+    position: relative;
+}
+
+.log-content {
+    box-shadow: 0 1rpx 3rpx 2rpx rgba(82, 81, 80, .6);
+
+    border-radius: 10rpx;
+    border: 1rpx solid #fff;
+     background-color: #B16AC9; 
+    padding: 40rpx 30rpx;
+}
+.log-content.green{
+  
+     background-color: #46DBC4; 
+}
+.log-content.violet{
+  
+     background-color: #B16AC9; 
+}
+.log-content.yellow{
+  
+     background-color: #EFA84E; 
+}
+.log-content textarea{
+    min-height: 200rpx;
+    width: inherit;
+    color: #fff;
+    font-size: 28rpx;
+}
+.log-color {
+    position: absolute;
+    margin-top: -18rpx;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    left: 0;
+}
+.log-color view{
+    width: 38rpx;
+    height: 38rpx;
+    border-radius: 50%;
+    border: 4rpx solid #fff;
+    box-shadow: 0 0 2rpx 1rpx rgba(47, 46, 46, .6);
+    float: left;
+    margin:0 15rpx;
+    background-color: #fff;
+}
+.log-color .violet{
+    background: linear-gradient(to left top, #9852af,#d68cee);
+}
+.log-color .green{
+    background: linear-gradient(to left top, #0ec5a9,#71edda);
+}
+.log-color .yellow{
+    background: linear-gradient(to left top, #e99025,#f9cf92);
+}

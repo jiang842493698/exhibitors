@@ -1,0 +1,33 @@
+<view class="page">
+    <view class="page-header">
+        <view class="all">
+            <view>已选择{{phonenum.length || 0}}|{{phone.length}}项</view>
+            <view bindtap="onAllSelected">{{all_selected?'取消全选':'全选'}}</view>
+        </view>
+    </view>
+    <view class="page-body">
+      <checkbox-group bindchange="checkboxChange">
+            <view class="row" wx:for="{{phone}}">
+                    <view class="item-item">
+                      <view class="row-title">
+                          <text>{{item.Name}}</text>
+                          <text>{{item.Job[0].value}}</text>
+                      </view>
+                      <view class="row-body">
+                            <view>{{item.phonenumber[0] || '暂无手机号'}}</view>
+                             <view class="row-foot">
+                                <checkbox class="checked" data-item_index="{{index}}" checked="{{item.checked}}" value='{{item.RecordId}}' color="#6288d5">
+                                </checkbox>
+                            </view> 
+                      </view>
+                        <!-- <view class='row-size'>{{item.label}}</view> -->
+                    </view>
+            </view>
+      </checkbox-group>
+    </view>
+    <view class="page-footer">
+        <view class="foot-btn">
+            <button bindtap="onNext">下一步</button>
+        </view>
+    </view>
+</view>

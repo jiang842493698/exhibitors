@@ -1,0 +1,91 @@
+
+
+
+.msg-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.xuanze{
+  width: 100%;
+  display: -webkit-box;
+  height: 100rpx;
+  /* border: 1rpx solid red; */
+  text-align: center;
+}
+.shezhi{
+  width: 50%;
+  /* border: 1rpx solid red; */
+  background-color: #D5D5D5;
+
+
+}
+.type{
+  margin-left: 30%;
+   /* border: 1rpx solid red;  */
+  width: 40%;
+  text-align: center;
+  background-color: #C0C0C0;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+.msg-title .title {
+  flex: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.msg-title .date {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.msg-content {
+  color: #999;
+  font-size: 28rpx;
+   display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+}
+.msg-contents{
+
+}
+
+.msg-strong {
+  font-size: 28rpx;
+  color: #6287d5;
+}
+
+.cell-footer .btn {
+  
+  border: inherit;
+  border-top: 1rpx solid #ededed;
+  border-right: 1rpx solid #ededed;
+  color: #999;
+  font-size: 26rpx;
+  height: 85rpx;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  margin: inherit;
+  border-radius: 0;
+  background-color: inherit;
+  line-height: inherit;
+}
+
+.btn.btn-cancel {
+  color: #999;
+}
+
+.btn:active {
+  opacity: 0.6;
+}
+
+.btn.btn-primary {
+  color: #57ac79;
+}

@@ -1,0 +1,227 @@
+/* pages/me/invite/invite.wxss */
+
+.page-head {
+    position: fixed;
+    width: 100%;
+    background: #eee;
+    padding: 20rpx 0;
+    z-index:1;
+}
+
+.tab {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    font-size: 26rpx;
+}
+
+.tab-list {
+    border: 1rpx solid #6288d5;
+    border-radius: 8rpx;
+    background: #fff;
+    color: #6288d5;
+}
+
+.tab-item {
+    display: inline-block;
+    padding: 12rpx 20rpx;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+
+.tab-item:hover {
+    opacity: 0.8;
+}
+
+.tab .selected {
+    background: #6288d5;
+    color: #fff;
+}
+
+.filter {
+    font-size: 26rpx;
+    color: #666;
+    border: 1rpx solid #ddd;
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    background-color: #eee;
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    border-radius: 8rpx;
+}
+
+.filter-open {
+    background-color: #fff;
+}
+
+.filter-open .filter-jt {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+}
+
+.filter-open .filter-dorpdown {
+    display: block;
+    opacity: 1;
+}
+
+.filter-title {
+    padding: 10rpx 20rpx;
+}
+
+.filter label {
+    padding-right: 10rpx;
+}
+
+.filter-jt {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    display: inline-block;
+    transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    float: right;
+}
+
+.filter-dorpdown {
+    display: none;
+    opacity: 0;
+    color: #6288d5;
+}
+
+.filter-item {
+    padding: 10rpx 20rpx;
+}
+
+.filter-item:hover {
+    background-color: #eee;
+}
+
+.page-body {
+    padding-top: 106rpx;
+}
+
+.cell {
+    border-left: 8rpx solid #fff;
+    margin-bottom: 20rpx;
+}
+
+/*未答复  */
+
+.cell-state-unanswered {}
+
+.cell-state-unanswered .info-state {
+    color: #999;
+}
+
+.cell-state-unanswered .info-btn {
+    display: flex;
+    display: -webkit-flex;
+}
+
+/*已同意  */
+
+.cell-state-agreed {}
+
+.cell-state-agreed .info-state {
+    color: #57ac79;
+}
+
+/*已拒绝  */
+
+.cell-state-rejected {}
+
+.cell-state-rejected .info-state {
+    color: #d5626d;
+}
+
+.cell-item {
+    background: #fff;
+    padding: 30rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-head {
+    color: #999;
+    font-size: 24rpx;
+}
+
+.info-head i {
+    padding-right: 30rpx;
+    font-size: 24rpx;
+}
+
+.info-body {
+    font-size: 30rpx;
+}
+
+.info-item {
+    display: flex;
+    display: -webkit-flex;
+    padding: 15rpx 0;
+}
+
+.info-label {
+    width: 140rpx;
+}
+
+.info-line {
+    color: #999;
+}
+
+.info-name {
+    padding-left: 20rpx;
+}
+
+.info-state {
+    color: #fff;
+}
+
+.info-btn {
+    flex: 1;
+    display: none;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-end;
+    font-size: 26rpx;
+}
+
+.info-btn view,.info-btn navigator {
+    padding: 14rpx 40rpx;
+    border-radius: 4rpx;
+    margin: 5rpx;
+}
+.info-btn-accept {
+    color: #6288d5;
+    border: 2rpx solid #6288d5;
+}
+
+.info-btn-refuse {
+    color: #d5626d;
+    border: 2rpx solid #d5626d;
+}
+
+.info-btn-cancel {
+    color: #666;
+    border: 2rpx solid #666;
+}
+
+.send, .collect {
+    position: absolute;
+    top: 8rpx;
+    right: -30rpx;
+    font-size: 22rpx;
+    color: #fff;
+    background-color: #0ec5a9;
+    width: 100rpx;
+    text-align: center;
+    padding: 5rpx;
+    transform: rotate(45deg);
+}
+
+.collect {
+    background-color: #a66cb9;
+}
+.info-btn view:active{
+    opacity: .6;
+}

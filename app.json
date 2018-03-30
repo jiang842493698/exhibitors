@@ -1,0 +1,98 @@
+{
+  "pages":[
+    "pages/home/index",
+
+    "pages/match/index",
+    "pages/match/search/search",
+    "pages/match/detail/detail",
+
+    "pages/exhibition/index"
+    ,"pages/exhibition/search/search"
+    ,"pages/exhibition/detail/detail"
+    ,"pages/exhibition/detail/product/product"
+    ,"pages/exhibition/detail/product/detail/detail"
+    ,"pages/exhibition/detail/product/detailt/detail"
+    ,"pages/schedule/index"
+    
+
+    ,"pages/my/index"
+    ,"pages/my/detail/detail"
+    ,"pages/my/msg/msg"
+    ,"pages/my/msg/sponsor/sponsor"
+    ,"pages/my/invite/invite"
+    ,"pages/my/invite/exhibition/exhibition"
+    ,"pages/my/invite/customer/customer"
+    ,"pages/my/collection/collection"
+    ,"pages/my/settings/settings"
+    ,"pages/my/settings/schedule/schedule"
+    ,"pages/my/settings/about/about"
+    ,"pages/my/cards/index"
+    ,"pages/my/cards/search/search"
+    ,"pages/my/cards/detail/detail"
+    ,"pages/my/cards/detail/log/log"
+    ,"pages/my/cards/detail/log/edit/edit"
+    ,"pages/my/cards/detail/remind/remind"
+    ,"pages/my/cards/detail/remind/edit/edit"
+    ,"pages/my/cards/select/select"
+    ,"pages/my/cards/select/send-sms/send-sms"
+    ,"pages/my/cards/select/send-sms/select-temp/select-temp"
+    ,"pages/my/cards/select/grouping/grouping"
+    ,"pages/my/cards/detail/edit/edit"
+    
+    ,"pages/other/smstemp/index"
+    ,"pages/other/smstemp/edit/edit"
+    ,"pages/other/group/index"
+    ,"pages/other/group/edit/edit"
+    ,"pages/other/error/error"
+    
+    ,"pages/login/index"
+    ,"pages/exhibition/detail/log/edit/edit"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "CEP",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#efeff4",
+    "enablePullDownRefresh": false
+  },
+    "component": true,
+    "tabBar": {
+      "color": "#7f8389",
+      "selectedColor": "#5b8bed",
+      "list": [
+        {
+          "pagePath": "pages/home/index",
+          "text": "首页",
+          "iconPath": "/assets/images/tabbar/home.png",
+          "selectedIconPath": "/assets/images/tabbar/home_selected.png"
+        },
+        {
+          "pagePath": "pages/match/index",
+          "text": "约客",
+          "iconPath": "/assets/images/tabbar/match.png",
+          "selectedIconPath": "/assets/images/tabbar/match_selected.png"
+        },
+        {
+          "pagePath": "pages/exhibition/index",
+          "text": "展商",
+          "iconPath": "/assets/images/tabbar/exhibition.png",
+          "selectedIconPath": "/assets/images/tabbar/exhibition_selected.png"
+        }
+        ,
+        {
+          "pagePath": "pages/schedule/index",
+          "text": "日程",
+          "iconPath": "/assets/images/tabbar/schedule.png",
+          "selectedIconPath": "/assets/images/tabbar/schedule_selected.png"
+        }
+        ,
+        {
+          "pagePath": "pages/my/index",
+          "text": "我的",
+          "iconPath": "/assets/images/tabbar/me.png",
+          "selectedIconPath": "/assets/images/tabbar/me_selected.png"
+        }
+      ]
+    }
+}

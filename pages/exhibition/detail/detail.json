@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#305ebc",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "展商详情",
+  "usingComponents": {
+    "invite": "/component/invite/invite"
+  }
+
+
+}

@@ -1,0 +1,56 @@
+<view class="page">
+        <form bindsubmit="onSubmit">
+            <view class="page-body">
+                <view class="cell">
+                    <view class="cell-list">
+                        <view class="cell-item">
+                            <view class="cell-header">模板名称</view>
+                            <view class="cell-body">
+                                <input type="text" value="{{name}}" placeholder="请输入模板名称" name="name" bindinput='onMoban' />
+                            </view>
+                        </view>
+                    </view>
+                </view>
+    
+                <!--
+                        <view class="cell">
+                        <view class="cell-title">短信类型</view>
+                        <view class="cell-list">
+                            <view class="cell-item">
+                                <view class="cell-header">验证码</view>
+                                <view class="cell-body"></view>
+                                <view class="cell-footer">
+                                   <checkbox value=""></checkbox>
+                                </view>
+                            </view>
+                            <view class="cell-item">
+                                <view class="cell-header">短信通知</view>
+                                <view class="cell-body"></view>
+                                <view class="cell-footer">
+                                   <checkbox value=""></checkbox>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+            
+            -->
+    
+                <view class="cell">
+                    <view class="cell-title">短信模板</view>
+                    <view class="cell-list">
+                        <view class="cell-item">
+                            <view class="cell-body">
+                                <textarea maxlength="500" auto-height="true" cursor-spacing="100" name="content" value="{{content}}" bindinput='onContent'></textarea>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                 <view class="template-tips">
+                    提示:替换方式 ${展商名称}=展商名称，可替换的关键字有：展商名称、展位号、专业买家姓名、专业买家职务、专业买家公司
+                </view> 
+            </view>
+            <view class="page-footer">
+                <button form-type="submit" class="btn btn-primary" hover-class="button-hover">保存</button>
+            </view>
+        </form>
+    </view>

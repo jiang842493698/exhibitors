@@ -1,0 +1,6 @@
+{
+"navigationBarBackgroundColor": "#305ebc",
+"navigationBarTextStyle": "white",
+"navigationBarTitleText": "我的日程",
+"enablePullDownRefresh": true
+}

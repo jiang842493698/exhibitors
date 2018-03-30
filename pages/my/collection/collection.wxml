@@ -1,0 +1,80 @@
+<view class="page">
+
+
+    <view class="page-body">
+        <view class='list' wx:for="{{result}}">
+            
+            <view class='item'>
+                <view class='item-left'>
+                    <image src='{{item.image}}'></image>
+                </view>
+                <view class='item-right'>
+                    <view class='item-company_name'>{{item.companyName}}</view>
+                    <view class='item-right-flex'>
+                        <view class='item-addr'>
+                            <label>{{item.BoothNo}}</label>
+                            <label>|</label>
+                            <label>{{item.city}}</label>
+                        </view>
+                        <view class='item-view'>
+                            <label>
+                                <i class="iconfont icon-msg"></i>
+                            </label>
+                            <label>{{item.remind}}</label>
+                        </view>
+                    </view>
+                    <view class='item-right-flex'>
+                        <view class='item-label'>
+                            <label>{{item.title}}</label>
+                        </view>
+                        <view class='item-xx'>
+                            <i class="iconfont icon-collect collect" wx:for="{{item.Attention}}"></i>
+                            <i class="iconfont icon-collect" wx:for="{{item.notAttention}}"></i>
+                        </view>
+                    </view>
+                    <view class='item-imgs'  >
+                        <image wx:for="{{item.productImage}}"  wx:for-item = "img" src='{{img.image}}'></image>
+                    </view>
+                </view>
+            </view>
+            <!-- <view class='item'>
+                <view class='item-left'>
+                    <image src='/assets/images/other/not_logo.png'></image>
+                </view>
+                <view class='item-right'>
+                    <view class='item-company_name'>上海联展软件技术有限公司</view>
+                    <view class='item-right-flex'>
+                        <view class='item-addr'>
+                            <label>N-101</label>
+                            <label>|</label>
+                            <label>上海</label>
+                        </view>
+                        <view class='item-view'>
+                            <label>
+                                <i class="iconfont icon-msg"></i>
+                            </label>
+                            <label>89098</label>
+                        </view>
+                    </view>
+                    <view class='item-right-flex'>
+                        <view class='item-label'>
+                            <label>互联网/大数据</label>
+                        </view>
+                        <view class='item-xx'>
+                            <i class="iconfont icon-collect collect"></i>
+                            <i class="iconfont icon-collect"></i>
+                            <i class="iconfont icon-collect"></i>
+                            <i class="iconfont icon-collect"></i>
+                            <i class="iconfont icon-collect"></i>
+                        </view>
+                    </view>
+                    <view class='item-imgs'>
+                        <image src='/assets/images/other/exhibits_1.png'></image>
+                        <image src='/assets/images/other/exhibits_1.png'></image>
+                        <image src='/assets/images/other/exhibits_1.png'></image>
+                    </view>
+                </view>
+            </view> -->
+        </view>
+    </view>
+</view>

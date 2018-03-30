@@ -1,0 +1,19 @@
+<view class="page">
+    <view class="page-body">
+        <view class='log'>
+            <view class='log-add line'>
+                <view class='log-add-round'></view>
+                <view class='log-add-btn' bindtap='onAdd'>
+                    <i class="iconfont icon-tianjia"></i>
+                    <label>添加</label>
+                </view>
+            </view>
+            <view class='log-item line'>
+                <view class='log-content' wx:for="{{reminds}}">
+                    <view class='log-time'>{{item.RemindDate}}</view>
+                    <view class='log-msg'>{{item.RemindContent}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,206 @@
+<import is="wxLayer" src='./../../../../component/wxLayer/_wxLayer.wxml' />
+
+<view class='page'>
+    <view class='page-head'></view>
+    <view class='page-body'>
+        <view class='cell'>
+            <swiper class='cord-image' indicator-dots >
+                <swiper-item>
+                    <image src='{{image}}' mode='aspectFill' bindtap='onImage' data-img='1'></image>
+                </swiper-item>
+                <swiper-item>
+                    <image src='{{backImage}}' mode='aspectFill' bindtap='onImage' data-img='2'></image>
+                    <view class='btn-image'>
+                        <i class='iconfont icon-Camera'></i>
+                        <label>{{link.BackImage?' 重新上传反面':' 上传反面'}}</label>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class='cell'>
+            <view class='cell-head'>
+                <view class='cell-title'>姓名</view>
+            </view>
+            <view class='cell-body'>
+                <view class='cell-item'>
+                    <view class='edit-item-body'>
+                        <input placeholder='姓名' value='{{name}}' bindinput='onNameInput'></input>
+                    </view>
+                </view>
+            </view>
+        </view>
+        
+        <view class='cell'>
+            <view class='cell-head'>
+                <view class='cell-title'>电话</view>
+                <view class='cell-add'>
+                    <i class="iconfont icon-tianjia" bindtap='onAddItem' data-type='phone'></i>
+                </view>
+            </view>
+            <view class='cell-body' wx:for="{{phone}}" wx:for-item="items">
+                <view class='cell-item'>
+                    <!-- <view wx:for="{{link.Phone}}" class='cell-item'> -->
+                    <view class='edit-item-head'>
+                        <picker range="{{phoneLabel}}" bindchange='onLabel' data-index='{{index}}' data-type='phone' class='edit-select'>
+                            <view>{{items.label}}</view>
+                        </picker>
+                    </view>
+                    <view class='edit-item-body'>
+                        <input placeholder='{{items.label}}' value='{{items.value}}' data-type='Phone' data-index='{{index}}' bindinput='onItemInput'></input>
+                    </view>
+                    <view class='edit-item-foot'>
+                        <view data-type='Phone' data-index='{{index}}' bindtap='onItemDelete'>
+                            <i class="iconfont icon-guanbi"></i>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='cell'>
+            <view class='cell-head'>
+                <view class='cell-title'>邮箱</view>
+                <view class='cell-add'>
+                    <i class="iconfont icon-tianjia" bindtap='onAddItem' data-type='email'></i>
+                </view>
+            </view>
+            <view class='cell-body' wx:for="{{email}}" wx:for-item="items">
+                <view class='cell-item'>
+                    <view class='edit-item-head'>
+                        <picker range="{{emailLabel}}" bindchange='onLabel' data-index='{{index}}' data-type='email'  class='edit-select'>
+                            <view>{{items.label}}</view>
+                        </picker>
+                    </view>
+                    <view class='edit-item-body'>
+                        <input placeholder='{{items.label}}' value='{{items.value}}' data-type='Email' data-index='{{index}}' bindinput='onItemInput'></input>
+                    </view>
+                    <view class='edit-item-foot'>
+                        <view data-type='Email' data-index='{{index}}' bindtap='onItemDelete'>
+                            <i class="iconfont icon-guanbi"></i>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class='cell'>
+            <view class='cell-head'>
+                <view class='cell-title'>公司</view>
+                <view class='cell-add'>
+                    <i class="iconfont icon-tianjia" bindtap='onAddItem' data-type='company'></i>
+                </view>
+            </view>
+            <view class='cell-body' wx:for="{{company}}" wx:for-item="items">
+                <view class='cell-item'>
+                    <view class='edit-item-head'>
+                        <picker range="{{companyLabel}}" bindchange='onLabel' data-index='{{index}}' data-type='company'  class='edit-select'>
+                            <view>{{items.label}}</view>
+                        </picker>
+                    </view>
+                    <view class='edit-item-body'>
+                        <input placeholder='{{items.label}}' value='{{items.value}}' data-type='Company' data-index='{{index}}' bindinput='onItemInput'></input>
+                    </view>
+                    <view class='edit-item-foot'>
+                        <view data-type='Company' data-index='{{index}}' bindtap='onItemDelete'>
+                            <i class="iconfont icon-guanbi"></i>
+                        </view>
+                    </view>
+                </view>
+                <!-- <view class='cell-item'>
+                    <picker range="{{['公司','公司2']}}" class='edit-item-head'>
+                        <view class='edit-select'>
+                            <view>公司</view>
+                        </view>
+                    </picker>
+                    <view class='edit-item-body'>
+                        <input placeholder='{{item.label}}' value='{{item.value}}' data-type='Company' data-index='{{index}}' bindinput='onItemInput'></input>
+                    </view>
+                    <view class='edit-item-foot'>
+                        <view data-type='Company' data-index='{{index}}' bindtap='onItemDelete'>
+                            <i class="iconfont icon-guanbi"></i>
+                        </view>
+                    </view>
+                </view> -->
+            </view>
+        </view>
+        <view class='cell'>
+            <view class='cell-head'>
+                <view class='cell-title'>部门</view>
+                <view class='cell-add'>
+                    <i class="iconfont icon-tianjia" bindtap='onAddItem' data-type='department'></i>
+                </view>
+            </view>
+            <view class='cell-body' wx:for="{{department}}" wx:for-item="items">
+                <view class='cell-item'>
+                    <picker range="{{departmentLabel}}" bindchange='onLabel' data-index='{{index}}' data-type='department' class='edit-item-head'> 
+                        <view class='edit-select'>
+                            <view>{{items.label}}</view>
+                        </view>
+                    </picker>
+                    <view class='edit-item-body'>
+                        <input placeholder='items.label' value='{{items.value}}' data-type='Department' data-index='{{index}}' bindinput='onItemInput'></input>
+                    </view>
+                    <view class='edit-item-foot'>
+                        <view data-type='Department' data-index='{{index}}' bindtap='onItemDelete'>
+                            <i class="iconfont icon-guanbi"></i>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='cell'>
+            <view class='cell-head'>
+                <view class='cell-title'>职业</view>
+                <view class='cell-add'>
+                    <i class="iconfont icon-tianjia" bindtap='onAddItem' data-type='job'></i>
+                </view>
+            </view>
+            <view class='cell-body' wx:for="{{job}}" wx:for-item="items">
+                <view  class='cell-item'>
+                    <picker range="{{jobLabel}}" bindchange='onLabel' data-index='{{index}}' data-type='job' class='edit-item-head'>
+                        <view class='edit-select'>
+                            <view>{{items.label}}</view>
+                        </view>
+                    </picker>
+                    <view class='edit-item-body'>
+                        <input placeholder='{{items.label}}' value='{{items.value}}' data-type='Job' data-index='{{index}}' bindinput='onItemInput'></input>
+                    </view>
+                    <view class='edit-item-foot'>
+                        <view data-type='Job' data-index='{{index}}' bindtap='onItemDelete'>
+                            <i class="iconfont icon-guanbi"></i>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='cell'>
+            <view class='cell-head'>
+                <view class='cell-title'>地址</view>
+                <view class='cell-add'>
+                    <i class="iconfont icon-tianjia" bindtap='onAddItem' data-type='address'></i>
+                </view>
+            </view>
+            <view class='cell-body' wx:for="{{address}}" wx:for-item="items">
+                <view class='cell-item'>
+                    <picker range="{{addressLabel}}"  bindchange='onLabel' data-index='{{index}}' data-type='address' class='edit-item-head'>
+                        <view class='edit-select'>
+                            <view>{{items.label}}</view>
+                        </view>
+                    </picker>
+                    <view class='edit-item-body'>
+                        <input placeholder='{{items.label}}' value='{{items.value}}' data-type='Address' data-index='{{index}}' bindinput='onItemInput'></input>
+                    </view>
+                    <view class='edit-item-foot'>
+                        <view data-type='Address' data-index='{{index}}' bindtap='onItemDelete'>
+                            <i class="iconfont icon-guanbi"></i>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+
+    </view>
+    <view class='page-foot'>
+        <button class='btn btn-primary' bindtap='onSave'>保存</button>
+    </view>
+</view>

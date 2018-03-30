@@ -1,0 +1,50 @@
+/* pages/exhibition/details/product/product.wxss */
+
+.page-body {
+    padding: 20rpx;
+    font-size: 28rpx;
+    color: #333;
+  }
+  
+  .list {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .item {
+    margin: auto;
+    width: 157rpx;
+     text-align: center; 
+     padding-right: 10rpx;
+  }
+  
+  .item image {
+    width: 157rpx;
+    height: 105rpx;
+  }
+  
+  .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .page-foot {
+    margin-top: 300rpx;
+  }
+  
+  .page-foot .btn {
+    background: #6288d5;
+    color: #fff;
+    padding: 20rpx;
+    border-radius: 5rpx;
+    margin: 30rpx;
+    text-align: center;
+    font-size: 36rpx;
+    line-height: inherit;
+    height: inherit;
+  }
+  

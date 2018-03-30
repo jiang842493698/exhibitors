@@ -1,0 +1,60 @@
+<view class="page">
+        <view class="search {{filter.length>0?'':'search_not_value'}}">
+          <view class='search-body'>
+            <view class='search-input'>
+              <view class="search-box">
+                <view class='search-icon'>
+                  <i class="iconfont icon-search"></i>
+                </view>
+                <input type='search' auto-focus placeholder='公司名称或联系人姓名' bindinput='onFilterInput'></input>
+                <view class='search-delete' bindtap='onFilterDelete'>
+                  <i class="iconfont icon-guanbi_r"></i>
+                </view>
+              </view>
+            </view>
+            <view class='search-btn' bindtap='onTapSearch'>
+              <view>搜索</view>
+            </view>
+          </view>
+        </view>
+      
+        <view class="page-body">
+          <view class='list'>
+            <view class='fitler-count'>搜索到{{count}}条数据</view>
+            <view class="group-list">
+              <view class="order-list" wx:for="{{message}}">
+                <block>
+                  <navigator url="/pages/my/cards/detail/detail?id={{item.RecordId}}">
+                    <view class="order-item">
+                      <view class="item-body">
+                        <view class="item-name">
+                          <text>{{item.Name}}</text>
+                          <text>{{item.Job[0].value}}</text>
+                        </view>
+                        <view class="item-company">{{item.Company[0].value}}</view>
+                      </view>
+                      <view class="item-foot">
+                            <view class='icon-round active'>
+                                <view>
+                                    <i class="iconfont icon-duanxin"></i>
+                                </view>
+                            </view>
+                            <view class='icon-round'>
+                                <view>
+                                    <i class="iconfont icon-dianhua2"></i>
+                                </view>
+                            </view>
+                            <view class='icon-round '>
+                                <view>
+                                    <i class="iconfont icon-yuyue1"></i>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                  </navigator>
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>

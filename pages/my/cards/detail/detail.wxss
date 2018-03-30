@@ -1,0 +1,163 @@
+ .page-header {
+    position: relative;
+    height: 420rpx;
+    overflow: hidden;
+    transition: all .4s ease-in-out;
+}
+
+.page-header.not-mask .crad-layer {
+    margin-top: 420rpx;
+}
+
+.page-header.not-mask {
+    height: 840rpx;
+}
+
+.crad-swipaer {
+    background: url("http://img.huizhanren.cn/rex/Uploads/2017.11/073f407c-d386-4f6f-8cb8-73fad5b4d41b.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 420rpx;
+}
+
+.crad-swipaer image {
+    width: 610rpx;
+    height: 350rpx;
+    position: absolute;
+    margin: 35rpx 70rpx;
+}
+
+.crad-layer {
+    position: absolute;
+    transition: all .6s ease-in-out;
+    background-color: rgba(48, 94, 188, .8);
+    width: 685rpx;
+    height: 420rpx;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+}
+
+.crad-layer .top {
+    padding: 50rpx 40rpx;
+    font-size: 30rpx;
+}
+
+.crad-name {
+    margin-bottom: 15rpx;
+}
+
+.crad-name .name {
+    margin-right: 10rpx;
+}
+
+.bottom {
+    padding: 30rpx 40rpx;
+    font-size: 28rpx;
+}
+
+.bottom .bottom-item {
+    margin-bottom: 30rpx;
+}
+
+.bottom-item i {
+    margin-right: 20rpx;
+}
+
+.bottom-item .left {
+    /* float: left; */
+   
+    width: 80%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.bottom-item .right {
+    float: right;
+    color: #ccc;
+    margin-top: -36rpx;
+}
+
+.page-body {
+    transition: all .6s ease-in-out;
+    margin-top: 30rpx;
+    background-color: #fff;
+}
+
+.page-body .list-item {
+    display: none;
+}
+
+.page-body .list-item:first-child {
+    display: flex;
+}
+
+.page-body .btn {
+    display: none;
+}
+
+.more .list-item {
+    display: flex;
+}
+
+.more .btn {
+    display: block;
+}
+
+.more .crad-pull {
+    transform: rotate(180deg);
+}
+
+.list-item {
+    display: flex;
+    padding: 28rpx 30rpx;
+    align-items: center;
+    background-color: #fff;
+}
+
+.list-item i {
+    font-size: 44rpx;
+    color: #666;
+}
+
+.list-left {
+    width: 80rpx;
+}
+
+.list-body {
+    flex: 1;
+}
+
+.list-body .value {
+    font-size: 32rpx;
+    color: #333;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.list-body .label {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.crad-pull {
+    text-align: center;
+    padding: 10rpx;
+    transition: all .4s ease-in-out;
+}
+
+.crad-pull:active {
+    opacity: .6;
+    background-color: #eee;
+}
+
+.crad-pull i {
+    font-size: 40rpx;
+} 
+

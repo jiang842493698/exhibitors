@@ -1,0 +1,13 @@
+
+@import '/styles/search.wxss';
+@import '/pages/exhibition/index.wxss';
+
+
+.page-body {
+    padding-top: 96rpx;
+}
+
+.list {
+    background: #fff;
+    border: 1rpx solid #e6e6e6;
+}

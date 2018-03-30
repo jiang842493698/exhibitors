@@ -1,0 +1,99 @@
+<view class="page">
+    <view class="search {{filter.length>0?'':'search_not_value'}}">
+        <view class='search-body'>
+            <view class='search-input'>
+                <view class="search-box">
+                    <view class='search-icon'>
+                        <i class="iconfont icon-search"></i>
+                    </view>
+                    <input type='search' auto-focus placeholder='姓名' bindinput='onFilterInput' value="{{filter}}"></input>
+                    <view class='search-delete' bindtap='onFilterDelete'>
+                        <i class="iconfont icon-guanbi_r"></i>
+                    </view>
+                </view>
+            </view>
+            <view class='search-btn' bindtap='onTapSearch'>
+                <view>搜索</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="page-body">
+        <view class='list'>
+            <view class='fitler-count'>搜索到{{count}}条数据</view>
+            <view class='item' wx:for="{{list}}">
+                 <view   class='item-left' hover-class="none"> 
+
+                    <view class='item-left-h'>
+                        <label class="item-left-h-name">{{item.Name}}</label>
+                        <label class='item-left-h-job'>{{item.Job}}</label>
+                    </view>
+                    <view class='item-left-b'>
+                        <label>上海联展软件技术有限公司</label>
+                    </view>
+                    <view class="item-left-f">
+                        <label class='item-left-f-lable'>软件</label>
+                    </view>
+                 </view> 
+
+                <view class='item-right'>
+                    <view class='item-right-top'>
+
+                        <view class='icon-round'>
+                            <view>
+                                <i class="iconfont icon-wenjuan"></i>
+                            </view>
+                        </view>
+                        <view class='icon-round active'>
+                            <view>
+                                <i class="iconfont icon-yuyue1"></i>
+                            </view>
+                            <view class="badge">0</view>
+                        </view>
+                        <view class='icon-round active'>
+                            <view>
+                                <i class="iconfont icon-daoda"></i>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="item-right-bottom">
+                        <view class='btn' data-index='{{index}}' bindtap="onInviteTa">约TA</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <!-- <view class='keyword'>
+            <view class='keyword-list k-host'>
+                <view class='k-head'>
+                    <view class='k-title'>历史搜索</view>
+
+                </view>
+                <view class='k-body'>
+                    <view class='k-item'>
+                        <view class='k-value'>联展</view>
+                    </view>
+                    <view class='k-item'>
+                        <view class='k-value'>联展</view>
+                    </view>
+                    <view class='k-item'>
+                        <view class='k-value'>联展</view>
+                    </view>
+                    <view class='k-item'>
+                        <view class='k-value'>联展</view>
+                    </view>
+                    <view class='k-item'>
+                        <view class='k-value'>联展</view>
+                    </view>
+                    <view class='k-item'>
+                        <view class='k-value'>联展</view>
+                    </view>
+                    <view class='k-item'>
+                        <view class='k-value'>联展</view>
+                    </view>
+                </view>
+            </view>
+        </view> -->
+    </view>
+</view>
+<invite data="{{invite.data}}" wx:if="{{invite.isShow}}" bindcancel="inviteCancel" bindconfirm="inviteConfirm"></invite>

@@ -2,8 +2,8 @@
 let app = getApp()
 let $ = getApp().$
 let _this
-let pageIndex = 1
-let pageSize = 7
+// let pageIndex = 1
+// let pageSize = 7
 Page({
 
   /**
@@ -19,7 +19,7 @@ Page({
 
   onLoad: function (options) {
     _this = this
-    pageIndex = 1
+    // pageIndex = 1
     _this.setData({
       results: []
     })
@@ -186,128 +186,18 @@ Page({
 
 
     }
-    let pageJson = {
-      pageIndex,
-      pageSize
-    }
+    // let pageJson = {
+    //   pageIndex,
+    //   pageSize
+    // }
     let newStartDate = new Date().getTime()
-    // $.request.InvitationInfoExhi().getAll(data, pageJson).then(res => {
-
-    //   if (res.resCode == 0 || res.resCode == 10000) {
-
-    //     let result = res.result
-    //     let user = wx.getStorageSync("userInfo")
-
-    //     let InvitationInfoExhi = (_this.data.InvitationInfoExhi == null ? [] : _this.data.InvitationInfoExhi).concat(result)
-    //     for (let i of InvitationInfoExhi) {
-    //       i.fettle = "展商"
-    //       if (user.ContactRecordId == i.InitatorChild[0].RecordId) {
-    //         i.status = "0"
-    //       }
-    //       if (user.ContactRecordId == i.ReceiverChild[0].RecordId) {
-    //         i.status = "1"
-    //       }
-    //     }
-
-    //     for (let i of InvitationInfoExhi) {
-    //       let d = i.MeetingTimeDate.substr(i.MeetingTimeDate.indexOf("-") + 1).replace("-", "/")
-    //       let dd = d.substr(0, d.indexOf("/"))
-    //       console.log(dd)
-    //       let cc = d.substr(d.indexOf("/"))
-    //       if (Number(dd) < 10) {
-    //         dd = "" + dd
-    //       }
-    //       if (Number(cc) < 10) {
-    //         cc = "0" + cc
-    //       }
-    //       i.MeetingTimeDate = (dd + "" + cc)
-
-    //       i.MeetingTimeStart = i.MeetingTimeStart.substr(i.MeetingTimeStart.indexOf(":") - 2)
-
-    //     }
-    //     _this.setData({
-    //       InvitationInfoExhi
-    //     })
-    //     console.log("pppppppppppppppppppppppppppppppp")
-    //     console.log(_this.data.InvitationInfoExhi)
-    //     wx.setStorageSync("Exhibitors", _this.data.InvitationInfoExhi)
-    //   }
-    //   let newEndDate = new Date().getTime();
-    //   console.log("YYYYYYYYYYYYYYYYYYYYYYYYYY")
-    //   console.log(newEndDate - newStartDate)
-    // })
-    // $.request.matchVInfo().getDate(data, pageJson).then(res => {
-    //   let newEndDates = new Date().getTime();
-    //   console.log("LLLLLLLLLLLLLLLLLLLLLLLLL")
-    //   console.log(newEndDates - newStartDate)
-    //   if (res.resCode == 0 || res.resCode == 10000) {
-    //     let user = wx.getStorageSync("userInfo")
-    //     let result = res.result
-    //     console.log("aaaaaaaaaaaaa")
-    //     console.log(result)
-    //     let matchVInfo = (_this.data.matchVInfo == null ? [] : _this.data.matchVInfo).concat(result)
-
-    //     let matchVInfoArray = []
-    //     console.log("bbbbbbbbbbbbbbbbbbbbbbbbb")
-    //     console.log(matchVInfo)
-    //     for (let i of matchVInfo) {
-    //       if (i.VisitorReceiver.length != 0) {
-    //         i.fettle = "观众"
-    //         if (i.Type === '1') {
-    //           if (i.InitatorChild[0].RecordId == user.ContactRecordId) {
-    //             i.status = "0"
-
-    //           }
-    //           if (i.VisitorReceiver[0].RecordId == user.ContactRecordId) {
-    //             i.status = "1"
-    //           }
-    //         } else {
-    //           if (i.VisitorInitator[0].RecordId == user.ContactRecordId) {
-    //             i.status = "0"
-    //           }
-    //           if (i.ReceiverChild[0].RecordId == user.ContactRecordId) {
-    //             i.status = "1"
-    //           }
-    //         }
-    //         if (i.MeetingTimeDate.length == 10){
-    //           i.MeetingTimeDate = i.MeetingTimeDate.substr(5).replace("-", "/");
-    //         }
-    //         i.MeetingTimeStart = i.MeetingTimeStart.substr(i.MeetingTimeStart.indexOf(":")-2)
-    //         matchVInfoArray.push(i)
-    //       }
-    //     }
-    //     // for (let i of matchVInfo) {
-    //     //   let d = i.MeetingTimeDate.substr(i.MeetingTimeDate.indexOf("-") + 1).replace("-", "/")
-    //     //   console.log(d)
-    //     //   let dd = d.substr(0, d.indexOf("/"))
-    //     //   console.log(dd)
-    //     //   let cc = d.substr(d.indexOf("/"))
-    //     //   console.log(dd)
-    //     //   if (Number(dd) < 10) {
-    //     //     // dd = "0" + dd
-    //     //   }
-    //     //   if (Number(cc) < 10) {
-    //     //     cc = "0" + cc
-    //     //   }
-    //     //   i.MeetingTimeDate = (dd + "" + cc)
-    //     //   i.MeetingTimeStart = i.MeetingTimeStart.substr(0, 5)
-    //     // }
-    //     _this.setData({
-    //       matchVInfo: matchVInfoArray
-    //     })
-    //     console.log("观众")
-    //     console.log(matchVInfoArray)
-    //     wx.setStorageSync("Audience", _this.data.matchVInfo)
-    //   }
-    //   let newEndDate = new Date().getTime();
-    //   console.log("YYYYYYYYYYYYYYYYYYYYYYYYYY")
-    //   console.log(newEndDate - newStartDate)
-    // })
-    let InvitationInfoExhi = $.request.InvitationInfoExhi().getAll(data, pageJson)
-    let matchVInfo = $.request.matchVInfo().getDate(data, pageJson)
+    
+    let InvitationInfoExhi = $.request.InvitationInfoExhi().getAll(data)
+    let matchVInfo = $.request.matchVInfo().getDate(data)
     let promise = Promise.all([InvitationInfoExhi, matchVInfo])
     promise.then(res =>{
       console.log(res)
+
       if (res[0].resCode == 0 || res[0].resCode == 10000){
         let result = res[0].result
         let user = wx.getStorageSync("userInfo")
@@ -315,6 +205,15 @@ Page({
         let InvitationInfoExhi = (_this.data.InvitationInfoExhi == null ? [] : _this.data.InvitationInfoExhi).concat(result)
         for (let i of InvitationInfoExhi) {
           i.fettle = "展商"
+          if (i.MeetingTimeStart.length == 5) {
+            let dat = i.MeetingTimeDate + " " + i.MeetingTimeStart + ":00";
+            var timestamp2 = Date.parse(new Date(dat));
+            i.orderbydate = timestamp2 / 1000;
+          } else {
+            let dat = i.MeetingTimeStart + ":00";
+            var timestamp2 = Date.parse(new Date(dat));
+            i.orderbydate = timestamp2 / 1000;
+          }
           if (user.ContactRecordId == i.InitatorChild[0].RecordId) {
             i.status = "0"
           }
@@ -357,6 +256,15 @@ Page({
         console.log("bbbbbbbbbbbbbbbbbbbbbbbbb")
         console.log(matchVInfo)
         for (let i of matchVInfo) {
+          if (i.MeetingTimeStart.length == 5) {
+            let dat = i.MeetingTimeDate + " " + i.MeetingTimeStart + ":00";
+            var timestamp2 = Date.parse(new Date(dat));
+            i.orderbydate = timestamp2 / 1000;
+          } else {
+            let dat = i.MeetingTimeStart+":00";
+            var timestamp2 = Date.parse(new Date(dat));
+            i.orderbydate = timestamp2 / 1000;
+          }
           i.fettle = "观众"
           if (i.MeetingTimeDate.length == 10) {
             i.MeetingTimeDate = i.MeetingTimeDate.substr(5).replace("-", "/");
@@ -367,7 +275,6 @@ Page({
             if (i.Type === '1') {
               if (i.InitatorChild[0].RecordId == user.ContactRecordId) {
                 i.status = "0"
-
               }
               if (i.VisitorReceiver[0].RecordId == user.ContactRecordId) {
                 i.status = "1"
@@ -401,22 +308,7 @@ Page({
             matchVInfoArray.push(i)
           }
         }
-        // for (let i of matchVInfo) {
-        //   let d = i.MeetingTimeDate.substr(i.MeetingTimeDate.indexOf("-") + 1).replace("-", "/")
-        //   console.log(d)
-        //   let dd = d.substr(0, d.indexOf("/"))
-        //   console.log(dd)
-        //   let cc = d.substr(d.indexOf("/"))
-        //   console.log(dd)
-        //   if (Number(dd) < 10) {
-        //     // dd = "0" + dd
-        //   }
-        //   if (Number(cc) < 10) {
-        //     cc = "0" + cc
-        //   }
-        //   i.MeetingTimeDate = (dd + "" + cc)
-        //   i.MeetingTimeStart = i.MeetingTimeStart.substr(0, 5)
-        // }
+        
         _this.setData({
           matchVInfo: matchVInfoArray
         })
@@ -427,55 +319,128 @@ Page({
       let newEndDate = new Date().getTime();
       console.log("YYYYYYYYYYYYYYYYYYYYYYYYYY")
       console.log(newEndDate - newStartDate)
+
+      console.log("222222222222222222222222222222222222222222222222222222222222222222")
+      let InvitationInfoExhi = _this.data.InvitationInfoExhi;
+      let matchVInfo = _this.data.matchVInfo;
+      console.log(InvitationInfoExhi);
+      console.log(matchVInfo);
+      let scheduleAll = [];
+      for (let i of InvitationInfoExhi){
+        let array = {};
+        if (i.status == 1){
+          array.orderbydate = i.orderbydate;
+          array.MeetingTimeDate = i.MeetingTimeDate;
+          array.MeetingTimeStart = i.MeetingTimeStart;
+          array.MeetingPlace = i.MeetingPlace;
+          array.Type = i.Type;
+          array.status = i.status;
+          array.State = i.State;
+          array.fettle = i.fettle;
+
+          array.Name = i.InitatorChild[0].Name;
+          array.Job = i.InitatorChild[0].Job;
+          array.Phone = i.InitatorChild[0].Phone;
+          array.CompanyName = i.Initator[0].CompanyName;
+          array.RecordId = i.RecordId;
+          scheduleAll.push(array);
+        } else if (i.status == 0) {
+          array.orderbydate = i.orderbydate;
+          array.MeetingTimeDate = i.MeetingTimeDate;
+          array.MeetingTimeStart = i.MeetingTimeStart;
+          array.MeetingPlace = i.MeetingPlace;
+          array.Type = i.Type;
+          array.status = i.status;
+          array.State = i.State;
+          array.fettle = i.fettle;
+
+          array.Name = i.ReceiverChild[0].Name;
+          array.Job = i.ReceiverChild[0].Job;
+          array.Phone = i.ReceiverChild[0].Phone;
+          array.CompanyName = i.Receiver[0].CompanyName;
+          array.RecordId = i.RecordId;
+          scheduleAll.push(array);
+        }
+
+      }
+      for (let i of matchVInfo) {
+        let array = {};
+
+        if (i.status == 0 && i.Type == 1){
+          array.orderbydate = i.orderbydate;
+          array.MeetingTimeDate = i.MeetingTimeDate;
+          array.MeetingTimeStart = i.MeetingTimeStart;
+          array.MeetingPlace = i.MeetingPlace;
+          array.Type = i.Type;
+          array.status = i.status;
+          array.State = i.State;
+          array.fettle = i.fettle;
+
+          array.Name = i.VisitorReceiver[0].Name;
+          array.Job = i.VisitorReceiver[0].Job;
+          array.Phone = i.VisitorReceiver[0].Mob;
+          array.CompanyName = i.VisitorReceiver[0].CompanyName;
+          array.RecordId = i.VisitorReceiver[0].RecordId;
+          scheduleAll.push(array);
+        } else if (i.status == 1 && i.Type == 1) {
+          array.orderbydate = i.orderbydate;
+          array.MeetingTimeDate = i.MeetingTimeDate;
+          array.MeetingTimeStart = i.MeetingTimeStart;
+          array.MeetingPlace = i.MeetingPlace;
+          array.Type = i.Type;
+          array.status = i.status;
+          array.State = i.State;
+          array.fettle = i.fettle;
+
+          array.Name = i.InitatorChild[0].Name;
+          array.Job = i.InitatorChild[0].Job;
+          array.Phone = i.InitatorChild[0].Phone;
+          array.CompanyName = i.Initator[0].CompanyName;
+          array.RecordId = i.InitatorChild[0].RecordId;
+          scheduleAll.push(array);
+        } else if (i.status == 0 && i.Type == 0) {
+          array.orderbydate = i.orderbydate;
+          array.MeetingTimeDate = i.MeetingTimeDate;
+          array.MeetingTimeStart = i.MeetingTimeStart;
+          array.MeetingPlace = i.MeetingPlace;
+          array.Type = i.Type;
+          array.status = i.status;
+          array.State = i.State;
+          array.fettle = i.fettle;
+
+          array.Name = i.ReceiverChild[0].Name;
+          array.Job = i.ReceiverChild[0].Job;
+          array.Phone = i.ReceiverChild[0].Phone;
+          array.CompanyName = i.Receiver[0].CompanyName;
+          array.RecordId = i.ReceiverChild[0].RecordId;
+          scheduleAll.push(array);
+        } else if (i.status == 1 && i.Type == 0) {
+          array.orderbydate = i.orderbydate;
+          array.MeetingTimeDate = i.MeetingTimeDate;
+          array.MeetingTimeStart = i.MeetingTimeStart;
+          array.MeetingPlace = i.MeetingPlace;
+          array.Type = i.Type;
+          array.status = i.status;
+          array.State = i.State;
+          array.fettle = i.fettle;
+
+          array.Name = i.VisitorInitator[0].Name;
+          array.Job = i.VisitorInitator[0].Job;
+          array.Phone = i.VisitorInitator[0].Phone;
+          array.CompanyName = i.VisitorInitator[0].Mob;
+          array.RecordId = i.VisitorInitator[0].RecordId;
+          scheduleAll.push(array);
+        }
+      }
+      console.log(scheduleAll);
+      let schedule = scheduleAll.sort((a, b) => b.orderbydate - a.orderbydate)
+      console.log(schedule);
+      _this.setData({
+        schedule
+      })
     })
 
   },
-  // onLink() {
-
-  //   $.request.matchVisitor().getAll().then(res => {
-  //     if (res.resCode == 0) {
-  //       let link = res.result
-
-  //       _this.setData({
-  //         link
-  //       })
-  //     }
-  //   })
-  // },
-  // onInvitationInfo(result) {
-  //   console.log(result)
-  //   let match = wx.getStorageSync("MATCH_VISITORS")
-  //   let user = wx.getStorageSync("userInfo")
-  //   console.log("//////////////////////////////")
-  //   console.log(user)
-  //   let link = _this.data.link
-  //   console.log(link)
-  //   for (let r of result) {
-  //     console.log(r.Receiver)
-  //     let linkName = (link.filter(e => e.RecordId == r.Receiver)[0] || match.filter(e => e.RecordId == r.Receiver)[0])
-  //     if (linkName) {
-  //       let name = linkName.Name
-  //       let job = linkName.JobTitle
-  //       let phone = linkName.Mob
-  //       let compName = linkName.CompName
-  //       let BootNo = user.BoothNo
-  //       console.log(BootNo)
-  //       r.name = name
-  //       r.job = job
-  //       r.phone = phone
-  //       r.compName = compName
-  //       r.BootNo = BootNo
-  //     } else {
-  //     }
-  //   }
-
-  //   console.log(result)
-  //   _this.setData({
-  //     result
-  //   })
-  //   console.log(_this.data.result)
-
-  // },
   /**
    * 
    * 选择日程
@@ -493,7 +458,7 @@ Page({
     _this.setData({
       type
     })
-    pageIndex = 1
+    // pageIndex = 1
     _this.setData({
       results: []
     })
@@ -549,12 +514,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    let count = _this.data.count
-    let pageNumIndex = Math.floor((count - 1) / count) + 1
+    // let count = _this.data.count
+    // let pageNumIndex = Math.floor((count - 1) / count) + 1
 
 
-    pageIndex++
-    _this.onContent(_this.data.type)
+    // pageIndex++
+    // _this.onContent(_this.data.type)
 
   },
 

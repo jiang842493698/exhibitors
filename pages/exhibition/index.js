@@ -26,7 +26,7 @@ Page({
       list: {
         areas: [],
         types: [],
-        orders: [{ name: '公司名称', value: 'CompanyName' }],
+        orders:[{ name: '9-18', value: '1' }, { name: '18-27', value: '2' }, { name: '27-54', value: '3' }, { name: '>54', value: '4' }],
       }
     },
   },
@@ -36,6 +36,9 @@ Page({
    */
   onLoad: function (options) {
     _this = this;
+    _this.setData({
+      match_exs: []
+    })
     this.filterCount(data)
     this.filter(data);
   },
@@ -122,29 +125,40 @@ Page({
 
   // },
   onFilterSelect: function (e) {
+    console.log("查询数据")
+    console.log(e);
+    _this.setData({
+      match_exs:[]
+    })
+    pageIndex = 1;
     let filter = this.data.filter;
     let filter_dropdown = this.data.filter_dropdown;
     let type = e.currentTarget.dataset.type;
     let value = e.currentTarget.dataset.value;
-
-    console.log()
-
+    filter[type] = { name: e.currentTarget.dataset.name, value };
     filter_dropdown[type] = false;
+
     if (type === 'order') {
-      filter[type] = { name: e.currentTarget.dataset.name, value };
-    } else {
-      filter[type] = value;
+      if (value.length == 0){
+        delete data.ShowArea;
+      }else{
+        data.ShowArea = value;
+      }
     }
 
     if (type == 'area') {
-      data = {
-        Province: filter.area
+      if (value.length == 0) {
+        delete data.Province;
+      } else {
+        data.Province = "/" + value + "/";
       }
     }
 
     if (type == "type") {
-      data = {
-        Categories: filter.type
+      if (value.length == 0) {
+        delete data.Categories;
+      } else {
+        data.Categories = "/" + value + "/";
       }
     }
     this.setData({
@@ -233,5 +247,13 @@ Page({
       ++pageIndex
       _this.filter(data);
     }
+  },
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading()
+    setTimeout(function () {
+      wx.hideNavigationBarLoading();
+      wx.stopPullDownRefresh();
+      _this.onLoad();
+    }, 1500)
   },
 })

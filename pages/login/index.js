@@ -73,7 +73,7 @@ Page({
    * @returns 
    */
   varMob: (mob) => {
-    // var reg = /^1[34578][0-9]{9}$/;      //************** */
+    var reg = /^1[34578][0-9]{9}$/;      //************** */
     return reg.test(mob);
   },
   //获取验证码
@@ -136,14 +136,14 @@ Page({
 
 
     let _this = this
-    // if (!this.varMob(mob)) {
-    //   $.service.alert({ title: '手机号码错误', image: '/assets/images/icon/fail.png' });
-    //   return;
-    // }
-    // if (code == "" || code == null) {
-    //   $.service.alert({ title: '验证码不能为空', image: '/assets/images/icon/fail.png' });              //************** */
-    //   return;
-    // }
+    if (!this.varMob(mob)) {
+      $.service.alert({ title: '手机号码错误', image: '/assets/images/icon/fail.png' });
+      return;
+    }
+    if (code == "" || code == null) {
+      $.service.alert({ title: '验证码不能为空', image: '/assets/images/icon/fail.png' });              //************** */
+      return;
+    }
 
     let userInfo, exInfo;
 
@@ -161,8 +161,8 @@ Page({
         $.service.switchTab('/pages/home/index')
       }
     }
-    // verCode.post(mob, code).then(ress => {                                                                 //************** */
-    //   if (ress.resCode == 0) {
+    verCode.post(mob, code).then(ress => {                                                                 //************** */
+      if (ress.resCode == 0) {
         $.request.exLogin().post(mob).then(res => {
 
           if (res.resCode == 0) {
@@ -181,26 +181,27 @@ Page({
               params: {}
             }
             console.log(777)
+            console.log(data)
             $.request.exInfo().post(data).then(r => {
               // res.resCode = 0
               if (r.resCode === 0) {
-                exInfo = r.result[0];
-                $.service.setStorage({
-                  key: 'exInfo',
-                  data: exInfo
-                });
-                $.service.setStorage({ key: 'PHONE_NUMBER', data: mob });
-                cellFun();
+                  exInfo = r.result[0];
+                  $.service.setStorage({
+                    key: 'exInfo',
+                    data: exInfo
+                  });
+                  $.service.setStorage({ key: 'PHONE_NUMBER', data: mob });
+                  cellFun();
               }
             })
           } else {
             $.service.alert({ title: '用户名不存在', image: '/assets/images/icon/fail.png' });
           }
         })
-    //   } else {
-    //     $.service.alert({ title: '验证码错误', image: '/assets/images/icon/fail.png' });                     //************** */
-    //   }
-    // })
+      } else {
+        $.service.alert({ title: '验证码错误', image: '/assets/images/icon/fail.png' });                     //************** */
+      }
+    })
 
     // console.log(444)
     // let a = wx.getStorage({

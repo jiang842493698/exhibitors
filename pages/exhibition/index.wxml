@@ -3,7 +3,7 @@
     <view class="filter-body">
       <view class='filter-item filter-item1'>
         <view class='item-title {{filter_dropdown.area?"show":""}}' data-type='area' bindtap='onFilterPull'>
-          <label>{{filter.area||'不限区域'}}</label>
+          <label>{{filter.area.name||'不限区域'}}</label>
 
           <view style='{{filter_dropdown.area?"transform: rotate(180deg);":""}}'>
             <i class="iconfont icon-xiala"></i>
@@ -11,30 +11,30 @@
         </view>
         <view wx:if="{{filter_dropdown.area}}" class="filter-dropdown-list">
           <view data-value='' data-type='area' bindtap='onFilterSelect'>不限区域</view>
-          <view data-value='{{item}}' data-type='area' bindtap='onFilterSelect' wx:for="{{filter.list.areas}}">{{item}}</view>
+          <view data-value='{{item}}' data-name='{{item}}' data-type='area' bindtap='onFilterSelect' wx:for="{{filter.list.areas}}">{{item}}</view>
         </view>
       </view>
       <view class='filter-item filter-item1'>
         <view class='item-title  {{filter_dropdown.type?"show":""}}' data-type='type' bindtap='onFilterPull'>
-          <label>{{filter.type||'不限分类'}}</label>
+          <label>{{filter.type.name||'不限分类'}}</label>
           <view style='{{filter_dropdown.type?"transform: rotate(180deg);":""}}'>
             <i class="iconfont icon-xiala"></i>
           </view>
         </view>
         <view wx:if="{{filter_dropdown.type}}" class="filter-dropdown-list">
           <view data-value='' data-type='type' bindtap='onFilterSelect'>不限分类</view>
-          <view data-value='{{item}}' data-type='type' bindtap='onFilterSelect' wx:for="{{filter.list.types}}">{{item}}</view>
+          <view data-value='{{item}}'data-name='{{item}}' data-type='type' bindtap='onFilterSelect' wx:for="{{filter.list.types}}">{{item}}</view>
         </view>
       </view>
       <view class='filter-item filter-item1'>
         <view class='item-title  {{filter_dropdown.order?"show":""}}' data-type='order' bindtap='onFilterPull'>
-          <label>{{filter.order.name||'默认排序'}}</label>
+          <label>{{filter.order.name||'不限面积'}}</label>
           <view style='{{filter_dropdown.order?"transform: rotate(180deg);":""}}'>
             <i class="iconfont icon-xiala"></i>
           </view>
         </view>
         <view wx:if="{{filter_dropdown.order}}" class="filter-dropdown-list">
-          <view data-value='' data-type='order' bindtap='onFilterSelect'>默认排序</view>
+          <view data-value=''  data-type='order' bindtap='onFilterSelect'>不限面积</view>
           <view data-value='{{item.value}}' data-name='{{item.name}}' data-type='order' bindtap='onFilterSelect' wx:for="{{filter.list.orders}}">{{item.name}}</view>
         </view>
       </view>

@@ -88,7 +88,7 @@ Page({
     }
     let page = {
       pageIndex : 1,
-      pageSize : 1
+      pageSize : 5
     }
     
     let organizer = MsgInfo.get(dataZhuban, page)
@@ -440,12 +440,12 @@ Page({
     setTimeout(function(){
       wx.hideNavigationBarLoading();
       wx.stopPullDownRefresh();
-      _this.onLoad();
+      _this.onShow();
     },1500)
 
   },
   onInviteCount(){
-    inviteCount.get().then(res => {
+    inviteCount.post().then(res => {
       if(res.resCode==0){
         console.log("查询未读消息数量")
         console.log(res)
@@ -508,7 +508,7 @@ Page({
     reject_invite.isShow = false;
     this.setData({ reject_invite });
     console.log("完成")
-    _this.onLoad();
+    _this.onShow();
   },
   onAgree(e){
     console.log(e)
@@ -529,14 +529,14 @@ Page({
             matchVInfo.put(data).then(res => {
               console.log(res)
               if (res.resCode == 0) {
-                _this.onLoad();
+                _this.onShow();
               }
             })
           } else if (e.currentTarget.dataset.feet == "展商"){
             InvitationInfoExhi.puts(data).then(res => {
               console.log(res)
               if (res.resCode == 0) {
-                _this.onLoad();
+                _this.onShow();
               }
             })
           }

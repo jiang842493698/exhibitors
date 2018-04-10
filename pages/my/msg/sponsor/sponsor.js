@@ -186,16 +186,13 @@ Page({
           var date = $.wxHelper.DateFormat(timestamp,"yyyy-MM-dd HH:mm:ss")
             console.log(date)
           let user = wx.getStorageSync("userInfo");
-          let f = true
-          if (r.Group != undefined){
+          let lis = {};
               for (let i of r.Group){
                 if (i.UserName == user.UserName){
-                  f = false
+                  lis = i; 
                 }
               }
-          }
-            if (f) {
-              
+              if (lis.Group.length == 0) {
               let data = {
                 "params": {
                   "recordId": r.RecordId,

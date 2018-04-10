@@ -604,7 +604,7 @@ class wxRequestHelper {
        * @returns
        */
       post: (mob, code) => {
-        return http.post({ params: { phoneNumber: mob, verifyCode: code } })
+        return codehttp.post({ params: { phoneNumber: mob, verifyCode: code } })
       }
     }
   }
@@ -706,7 +706,7 @@ class wxRequestHelper {
           return http.post(data);
         }
       },
-      getAll: (dataJson, page) => {
+      getAll: (dataJson) => {
         let data = {};
 
 
@@ -721,7 +721,6 @@ class wxRequestHelper {
               ExhibitionId: exInfo.RecordId,
               ...dataJson
             },
-            options: { ...page }
           }
         })) {
           console.log(22222222)
@@ -746,6 +745,7 @@ class wxRequestHelper {
             // data.userId = userInfo.UserId
             data.params.condition.ExhibitionId = exInfo.RecordId;
           data.params.condition.ExhibitorId = userInfo.RecordId;
+          data.params.condition.ReceiverChild = userInfo.ContactRecordId;
           data.params.options = {
             ...page
           };
@@ -1462,6 +1462,7 @@ class wxRequestHelper {
             // data.userId = userInfo.UserId
             data.params.condition.ExhibitionId = exInfo.RecordId;
           data.params.condition.ExhibitorId = userInfo.RecordId;
+          data.params.condition.ReceiverChild = userInfo.ContactRecordId;
           data.params.condition.State = "2";
         })) {
           return http.post(data);
@@ -1482,7 +1483,7 @@ class wxRequestHelper {
 
 
       },
-      getDate: (dataJson, page) => {
+      getDate: (dataJson) => {
 
         let data = {
 
@@ -1494,8 +1495,8 @@ class wxRequestHelper {
 
         data.params = {}
         data.params.condition = { ...dataJson }
-        data.params.options = { ...page }
-        console.log(page)
+        // data.params.options = { ...page }
+        // console.log(page)
         if (_getUserInfo((userInfo, exInfo) => {
           console.log(userInfo)
           console.log(exInfo)
@@ -1548,6 +1549,7 @@ class wxRequestHelper {
             data.userId = userInfo.UserId
           data.params.condition.ExhibitionId = exInfo.RecordId;
           data.params.condition.ExhibitorId = userInfo.RecordId;
+          
         })) {
           return https.post(data);
         }
@@ -1733,6 +1735,26 @@ class wxRequestHelper {
       },
     }
   }
+  /**
+   *添加访客浏览记录 
+   */
+  insert() {
+    let http = _structure("/data/insert/VisitInfo")
+    return {
+      visitInfo: (record) => {
+        var data = {}
+        if (_getUserInfo((userInfo, exInfo) => {
+          data.tenantId = exInfo.TenantId;
+          data.userId = userInfo.UserId;
+          record.ExhibitionId = exInfo.RecordId;
+          record.ExhibitorContactId = userInfo.RecordId;
+          data.params = { record }
+        })) {
+          return http.post(data);
+        }
+      },
+    }
+  }
   //#region 展商
 
   /**
@@ -1766,6 +1788,10 @@ class wxRequestHelper {
                   "field": "ExhibitorId"
                 }
               }],} }
+        if (_getUserInfo((userInfo, exInfo) => {
+          data.tenantId = userInfo.TenantId;
+          data.userId = userInfo.UserId;
+        })) 
         {
           return http.post(data)
         }
@@ -1801,14 +1827,14 @@ class wxRequestHelper {
         let data = {
           params: {
             condition: { ...matchExData },
-            childObjects: [
-              {
-                "fieldName": "ExhibitorContact",
-                "reference": {
-                  "object": "ExhibitorContact",
-                  "field": "ExhibitorId"
-                }
-              }],
+            // childObjects: [
+            //   {
+            //     "fieldName": "ExhibitorContact",
+            //     "reference": {
+            //       "object": "ExhibitorContact",
+            //       "field": "ExhibitorId"
+            //     }
+            //   }],
             options: {
               ...page
             }

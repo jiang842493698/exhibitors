@@ -32,7 +32,8 @@ Page({
   onLoad: function (options) {
     _this = this;
     id = options.id;
-    _this.onFuilter()
+    _this.onFuilter();
+    _this.vis
   },
   onFuilter() {
     console.log(id)
@@ -48,6 +49,12 @@ Page({
         _this.setData({
           info
         })
+
+        /**
+         * 添加浏览信息
+         */
+        let dataJson = { ExhibitorId: id }
+        $.request.insert().visitInfo(dataJson);
       }
       let info = _this.data.info
       console.log(info.RecordId)
